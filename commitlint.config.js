@@ -4,4 +4,4 @@ module.exports = {
     (message) => /^Bumps \[.+]\(.+\) from .+ to .+\.$/m.test(message),
     (message) => /^chore\(release\): .+/m.test(message),
   ],
-};
+}
