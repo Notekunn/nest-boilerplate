@@ -1,0 +1,25 @@
+name: ✨
+
+on:
+  push:
+    branches:
+      - '**'
+      - '!main'
+
+jobs:
+  lint:
+    name: Run linter
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2.3.4
+
+      - uses: actions/setup-node@v2.1.5
+        with:
+          node-version: '16'
+
+      - name: Install package
+        run: yarn
+
+      - name: Check lint
+        run: yarn lint
+     
