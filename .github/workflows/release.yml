@@ -1,0 +1,31 @@
+name: 🚀
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2.3.4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.PAT }}
+      - uses: actions/setup-node@v2.1.5
+        with:
+          node-version: '16'
+      - name: Build
+        run: yarn && yarn build
+        env:
+          NODE_AUTH_TOKEN: ${ github.token  }}
+      - name: Release
+        run: |
+          git config --global user.email "action@github.com"
+          git config --global user.name "GitHub Action"
+          npx semantic-release
+        env:
+          GH_TOKEN: ${{ github.token  }}
+          NODE_AUTH_TOKEN: ${{ github.token }}
