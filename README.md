@@ -1,8 +1,20 @@
 <p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
+  <a href="https://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" height="80" alt="Nest Logo" /></a>
+  <a href="https://typeorm.io/" target="blank"><img src="https://avatars.githubusercontent.com/u/20165699" height="80" alt="TypeORM Logo" /></a>
+  <a href="https://www.postgresql.org/" target="blank"><img src="https://www.postgresql.org/media/img/about/press/elephant.png" height="80" alt="PostgreSQL Logo" /></a>
+  <a href="https://jestjs.io/" target="blank"><img src="https://raw.githubusercontent.com/facebook/jest/main/website/static/img/jest.png" height="80" alt="Jest Logo" /></a>
+  <a href="https://prettier.io/" target="blank"><img src="https://raw.githubusercontent.com/prettier/prettier/main/website/static/icon.png" height="80" alt="Prettier Logo" /></a>
+  <a href="https://eslint.org/" target="blank"><img src="https://raw.githubusercontent.com/eslint/archive-website/e19d0bd4b5c116996f4cd94d4e90df5cc4367236/assets/img/logo.svg" height="80" alt="ESLint Logo" /></a>
+  <a href="https://docs.docker.com/" target="blank"><img src="https://www.docker.com/wp-content/uploads/2022/03/Moby-logo.png" height="80" alt="Docker Logo" /></a>
 </p>
 
-<p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
+<p align="center">
+  <a href="https://github.com/features/actions" target="blank"><img src="https://avatars.githubusercontent.com/u/44036562" height="80" alt="GitHub Actions Logo" /></a>
+  <a href="https://cloud.google.com/kubernetes-engine" target="blank"><img src="https://raw.githubusercontent.com/kubernetes/kubernetes/master/logo/logo.png" height="80" alt="Kubernetes Logo" /></a>
+  <a href="https://commitlint.js.org/" target="blank"><img src="https://raw.githubusercontent.com/conventional-changelog/commitlint/master/docs/assets/icon.svg" height="80" alt="CommitLint Logo" /></a>
+  <a href="https://semantic-release.gitbook.io/semantic-release/" target="blank"><img src="https://raw.githubusercontent.com/semantic-release/semantic-release/master/media/semantic-release-logo.svg" height="80" alt="Semantic Release Logo" /></a>
+  <a href="https://github.com/nestjs/swagger" target="blank"><img src="https://raw.githubusercontent.com/swagger-api/swagger-ui/master/dist/favicon-32x32.png" height="80" alt="CommitLint Logo" /></a>
+</p>
 
 ## Description
 
