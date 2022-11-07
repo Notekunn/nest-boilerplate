@@ -5,6 +5,8 @@
 - [x] Add husky
 - [x] Add lint staged
 - [x] Add github CI-CD for lint
-- [ ] Setup semantic release
-- [ ] Update readme
+- [x] Setup semantic release
+- [x] Update readme
+- [ ] Implement base
+- [ ] Implement TypeORM
 - [ ] Add hygen
