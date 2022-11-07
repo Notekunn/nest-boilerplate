@@ -1,5 +1,12 @@
 # Nest boilerplate changelog
 
+## [1.0.1](https://github.com/Notekunn/nest-boilerplate/compare/v1.0.0...v1.0.1) (2022-11-07)
+
+
+### Bug Fixes
+
+* semantic release ([2689f3f](https://github.com/Notekunn/nest-boilerplate/commit/2689f3ff6a9a4f2d2c6bbc7068b61d9e3dfa5ca1))
+
 # 1.0.0 (2022-11-07)
 
 
