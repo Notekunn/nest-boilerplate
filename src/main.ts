@@ -1,10 +1,11 @@
+import { fastifyHelmet } from '@fastify/helmet'
 import { Logger } from '@nestjs/common'
 import { NestFactory, Reflector } from '@nestjs/core'
 import { FastifyAdapter, NestFastifyApplication } from '@nestjs/platform-fastify'
-import { fastifyHelmet } from 'fastify-helmet'
-import morgan from 'morgan'
+import * as morgan from 'morgan'
 
 import { AppModule } from './app.module'
+import { setupSwagger } from './swagger'
 
 async function bootstrap() {
   const app = await NestFactory.create<NestFastifyApplication>(AppModule, new FastifyAdapter())
@@ -39,7 +40,9 @@ async function bootstrap() {
   // TODO: add global interceptor
   // TODO: add global pipes
 
-  // TODO: implement swagger
+  if (process.env.NODE_ENV !== 'production') {
+    setupSwagger(app)
+  }
 
   const port = 3000
   await app.listen(port, '0.0.0.0')
