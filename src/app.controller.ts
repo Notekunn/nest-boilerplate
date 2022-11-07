@@ -1,12 +1,12 @@
 import { Controller, Get } from '@nestjs/common'
-import { AppService } from './app.service'
 
 @Controller()
 export class AppController {
-  constructor(private readonly appService: AppService) {}
-
-  @Get()
-  getHello(): string {
-    return this.appService.getHello()
+  @Get('/healthz')
+  healthCheck() {
+    const { npm_package_version, SERVICE_VERSION } = process.env
+    return {
+      version: `v${SERVICE_VERSION || npm_package_version}`,
+    }
   }
 }
