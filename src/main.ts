@@ -1,16 +1,20 @@
 import { fastifyHelmet } from '@fastify/helmet'
 import { Logger } from '@nestjs/common'
+import { ConfigService } from '@nestjs/config'
 import { NestFactory, Reflector } from '@nestjs/core'
 import { FastifyAdapter, NestFastifyApplication } from '@nestjs/platform-fastify'
 import * as morgan from 'morgan'
 
 import { AppModule } from './app.module'
+import { AppConfiguration } from './configurations/app.config'
 import { setupSwagger } from './swagger'
 
 async function bootstrap() {
   const app = await NestFactory.create<NestFastifyApplication>(AppModule, new FastifyAdapter())
 
   const logger = new Logger('bootstrap')
+
+  const configService = app.get(ConfigService)
 
   app.enableCors({
     origin: '*',
@@ -44,9 +48,9 @@ async function bootstrap() {
     setupSwagger(app)
   }
 
-  const port = 3000
-  await app.listen(port, '0.0.0.0')
+  const { host, port } = configService.get<AppConfiguration>('app')
+  await app.listen(port, host)
 
-  logger.log(`server running on port ${port}`)
+  logger.log(`server running on ${host}:${port}`)
 }
 bootstrap()
