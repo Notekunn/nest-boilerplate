@@ -16,6 +16,22 @@
     "noImplicitAny": false,
     "strictBindCallApply": false,
     "forceConsistentCasingInFileNames": false,
-    "noFallthroughCasesInSwitch": false
+    "noFallthroughCasesInSwitch": false,
+    "paths": {
+      "@common/*": ["src/common/*"],
+      "@constants/*": ["src/constants/*"],
+      "@decorators/*": ["src/decorators/*"],
+      "@exceptions/*": ["src/exceptions/*"],
+      "@filters/*": ["src/filters/*"],
+      "@guards/*": ["src/guards/*"],
+      "@i18n/*": ["src/i18n/*"],
+      "@interceptors/*": ["src/interceptors/*"],
+      "@interfaces/*": ["src/interfaces/*"],
+      "@middlewares/*": ["src/middlewares/*"],
+      "@modules/*": ["src/modules/*"],
+      "@providers/*": ["src/providers/*"],
+      "@shared/*": ["src/shared/*"],
+      "@views/*": ["src/views/*"]
+    }
   }
 }

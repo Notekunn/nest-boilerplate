@@ -1,6 +1,7 @@
 import { registerAs } from '@nestjs/config'
 import { TypeOrmModuleOptions } from '@nestjs/typeorm'
-import { SnakeNamingStrategy } from 'src/snake-naming.strategy'
+
+import { SnakeNamingStrategy } from '../snake-naming.strategy'
 
 export const typeormConfiguration = registerAs<TypeOrmModuleOptions>('orm', () => {
   return {
@@ -12,13 +13,13 @@ export const typeormConfiguration = registerAs<TypeOrmModuleOptions>('orm', () =
     database: process.env.DB_NAME,
     namingStrategy: new SnakeNamingStrategy(),
     migrationsTableName: '__migrations',
-    entities: ['**/*.entity.js'],
+    entities: ['**/modules/**/*.entity.js'],
     migrations: ['**/{migrations,seeds}/*.js'],
-    migrationsRun: true,
+    migrationsRun: process.env.DB_AUTO_RUN_MIGRATIONS === 'true',
     synchronize: false,
-    logging: process.env.DB_LOGGING == 'true',
+    logging: process.env.DB_LOGGING === 'true',
     ssl:
-      process.env.DB_SSL == 'true'
+      process.env.DB_SSL === 'true'
         ? {
             require: true,
             rejectUnauthorized: false,

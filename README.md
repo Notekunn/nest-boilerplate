@@ -13,7 +13,8 @@
   <a href="https://cloud.google.com/kubernetes-engine" target="blank"><img src="https://raw.githubusercontent.com/kubernetes/kubernetes/master/logo/logo.png" height="80" alt="Kubernetes Logo" /></a>
   <a href="https://commitlint.js.org/" target="blank"><img src="https://raw.githubusercontent.com/conventional-changelog/commitlint/master/docs/assets/icon.svg" height="80" alt="CommitLint Logo" /></a>
   <a href="https://semantic-release.gitbook.io/semantic-release/" target="blank"><img src="https://raw.githubusercontent.com/semantic-release/semantic-release/master/media/semantic-release-logo.svg" height="80" alt="Semantic Release Logo" /></a>
-  <a href="https://github.com/nestjs/swagger" target="blank"><img src="https://raw.githubusercontent.com/swagger-api/swagger-ui/master/dist/favicon-32x32.png" height="80" alt="CommitLint Logo" /></a>
+  <a href="https://github.com/nestjs/swagger" target="blank"><img src="https://raw.githubusercontent.com/swagger-api/swagger-ui/master/dist/favicon-32x32.png" height="80" alt="CommitLint Logo" /></a>  
+  <a href="https://www.fastify.io/" target="blank"><img src="https://github.com/fastify/graphics/raw/HEAD/fastify-landscape-outlined.svg" height="80" alt="Fastify Logo" /></a>
 </p>
 
 ## Description
@@ -55,4 +56,27 @@ $ npm run test:e2e
 
 # test coverage
 $ npm run test:cov
+```
+
+## TypeORM
+
+```bash
+# generate migration
+yarn migration:generate MigrationName
+# or
+yarn build && yarn typeorm migration:generate -p ./src/database/migrations/MigrationName
+
+# run migration
+yarn migration:run
+```
+
+- Other commands:
+
+```bash
+# drop schema
+yarn typeorm schema:drop
+
+# create migration
+yarn migration:create MigrationName
+
 ```
