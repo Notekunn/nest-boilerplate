@@ -1,5 +1,5 @@
 import { fastifyHelmet } from '@fastify/helmet'
-import { Logger } from '@nestjs/common'
+import { Logger, VersioningType } from '@nestjs/common'
 import { ConfigService } from '@nestjs/config'
 import { NestFactory, Reflector } from '@nestjs/core'
 import { FastifyAdapter, NestFastifyApplication } from '@nestjs/platform-fastify'
@@ -36,7 +36,10 @@ async function bootstrap() {
 
   app.use(morgan('dev'))
 
-  app.setGlobalPrefix('v1')
+  app.enableVersioning({
+    defaultVersion: '1',
+    type: VersioningType.URI,
+  })
 
   const _reflector = app.get(Reflector)
 
