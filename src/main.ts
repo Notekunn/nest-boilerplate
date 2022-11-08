@@ -47,11 +47,12 @@ async function bootstrap() {
   // TODO: add global interceptor
   // TODO: add global pipes
 
+  const { host, port, version } = configService.get<AppConfiguration>('app')
+
   if (process.env.NODE_ENV !== 'production') {
-    setupSwagger(app)
+    setupSwagger(app, version)
   }
 
-  const { host, port } = configService.get<AppConfiguration>('app')
   await app.listen(port, host)
 
   logger.log(`server running on ${host}:${port}`)

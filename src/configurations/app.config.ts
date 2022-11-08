@@ -3,6 +3,7 @@ import { registerAs } from '@nestjs/config'
 export interface AppConfiguration {
   readonly host: string
   readonly port: number
+  readonly version: string
 }
 
 export const appConfiguration = registerAs<AppConfiguration>('app', () => {
