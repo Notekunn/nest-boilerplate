@@ -1,5 +1,5 @@
 import { fastifyHelmet } from '@fastify/helmet'
-import { Logger, VersioningType } from '@nestjs/common'
+import { Logger, ValidationPipe, VersioningType } from '@nestjs/common'
 import { ConfigService } from '@nestjs/config'
 import { NestFactory, Reflector } from '@nestjs/core'
 import { FastifyAdapter, NestFastifyApplication } from '@nestjs/platform-fastify'
@@ -45,7 +45,12 @@ async function bootstrap() {
 
   // TODO: add global exception filter
   // TODO: add global interceptor
-  // TODO: add global pipes
+  app.useGlobalPipes(
+    new ValidationPipe({
+      whitelist: true,
+      transform: true,
+    }),
+  )
 
   const { host, port, version } = configService.get<AppConfiguration>('app')
 

@@ -1,4 +1,9 @@
 import { Module } from '@nestjs/common'
 
-@Module({})
+import { LoginByEmailCommandHandler } from './cqrs/commands/handler/login-by-email.handler'
+
+const CommandHandlers = [LoginByEmailCommandHandler]
+@Module({
+  providers: [...CommandHandlers],
+})
 export class AuthModule {}

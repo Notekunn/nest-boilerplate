@@ -1,5 +1,11 @@
 import { AbstractEntity } from '@common/entities/abstract.entity'
-import { Entity } from 'typeorm'
+import { Column, Entity } from 'typeorm'
 
 @Entity('user')
-export class UserEntity extends AbstractEntity {}
+export class UserEntity extends AbstractEntity {
+  @Column()
+  email: string
+
+  @Column()
+  password: string
+}

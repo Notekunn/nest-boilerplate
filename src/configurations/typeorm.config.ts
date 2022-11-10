@@ -16,7 +16,7 @@ export const typeormConfiguration = registerAs<TypeOrmModuleOptions>('orm', () =
     entities: ['**/modules/**/*.entity.js'],
     migrations: ['**/{migrations,seeds}/*.js'],
     migrationsRun: process.env.DB_AUTO_RUN_MIGRATIONS === 'true',
-    synchronize: false,
+    synchronize: process.env.DB_AUTO_SYNC === 'true',
     logging: process.env.DB_LOGGING === 'true',
     ssl:
       process.env.DB_SSL === 'true'
