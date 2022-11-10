@@ -1,6 +1,10 @@
+import { ConfigModule } from '@nestjs/config'
 import { Test, TestingModule } from '@nestjs/testing'
+
 import { AppController } from './app.controller'
-import { AppService } from './app.service'
+import { appConfiguration } from './configurations/app.config'
+import { jwtConfiguration } from './configurations/jwt.config'
+import { typeormConfiguration } from './configurations/typeorm.config'
 
 describe('AppController', () => {
   let appController: AppController
@@ -8,15 +12,16 @@ describe('AppController', () => {
   beforeEach(async () => {
     const app: TestingModule = await Test.createTestingModule({
       controllers: [AppController],
-      providers: [AppService],
+      imports: [ConfigModule.forRoot({ load: [appConfiguration, typeormConfiguration, jwtConfiguration] })],
+      providers: [],
     }).compile()
 
     appController = app.get<AppController>(AppController)
   })
 
   describe('root', () => {
-    it('should return "Hello World!"', () => {
-      expect(appController.getHello()).toBe('Hello World!')
+    it('should return version when health check', () => {
+      expect(appController.healthCheck().version).toMatch(/^v(\d+).(\d+).(\d+)$/g)
     })
   })
 })
