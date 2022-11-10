@@ -899,6 +899,11 @@
     "@jridgewell/resolve-uri" "3.1.0"
     "@jridgewell/sourcemap-codec" "1.4.14"
 
+"@nestjs-architects/typed-cqrs@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@nestjs-architects/typed-cqrs/-/typed-cqrs-1.0.0.tgz#aa562f309757b20fc47c918a34a4932bd02219b3"
+  integrity sha512-AJSxL3CeWZzYhtefYTWMasHRTzjx92Ud210PZqi3IHbXnOvOBzZBW1dxbETAYjo8SCCLC57HJS1MkRQ3qa8ahg==
+
 "@nestjs/cli@^9.0.0":
   version "9.1.5"
   resolved "https://registry.yarnpkg.com/@nestjs/cli/-/cli-9.1.5.tgz#aa150991b209dc2b459c974cc1c43ea10a276ff8"
@@ -958,6 +963,13 @@
     path-to-regexp "3.2.0"
     tslib "2.4.0"
     uuid "9.0.0"
+
+"@nestjs/cqrs@^9.0.1":
+  version "9.0.1"
+  resolved "https://registry.yarnpkg.com/@nestjs/cqrs/-/cqrs-9.0.1.tgz#3aaa5dbee37d5ac3670e320d6a241a076e189082"
+  integrity sha512-DsqkAaIHy9+Ot4FJybmlDQk0HBDTGztz0F3LcMnatFDQv1X56W0Y2+R/7jjwHsmHzQfbffT2FGyCOx2/9apFCg==
+  dependencies:
+    uuid "8.3.2"
 
 "@nestjs/mapped-types@1.2.0":
   version "1.2.0"
