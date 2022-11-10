@@ -1,3 +1,4 @@
+import { UserModule } from '@modules/users/user.module'
 import { Module } from '@nestjs/common'
 import { ConfigModule, ConfigService } from '@nestjs/config'
 import { TypeOrmModule, TypeOrmModuleOptions } from '@nestjs/typeorm'
@@ -7,7 +8,7 @@ import { appConfiguration } from './configurations/app.config'
 import { typeormConfiguration } from './configurations/typeorm.config'
 import { AuthModule } from './modules/auth/auth.module'
 
-const appModules = [AuthModule]
+const appModules = [AuthModule, UserModule]
 
 @Module({
   imports: [
