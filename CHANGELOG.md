@@ -1,5 +1,12 @@
 # Nest boilerplate changelog
 
+# [1.1.0](https://github.com/Notekunn/nest-boilerplate/compare/v1.0.1...v1.1.0) (2022-11-10)
+
+
+### Features
+
+* add base structure ([#5](https://github.com/Notekunn/nest-boilerplate/issues/5)) ([a1e7eb7](https://github.com/Notekunn/nest-boilerplate/commit/a1e7eb722504bd571885d7c7cdeeed5a50c5576c))
+
 ## [1.0.1](https://github.com/Notekunn/nest-boilerplate/compare/v1.0.0...v1.0.1) (2022-11-07)
 
 
