@@ -1,5 +1,5 @@
 import { fastifyHelmet } from '@fastify/helmet'
-import { Logger, ValidationPipe, VersioningType } from '@nestjs/common'
+import { ClassSerializerInterceptor, Logger, ValidationPipe, VersioningType } from '@nestjs/common'
 import { ConfigService } from '@nestjs/config'
 import { NestFactory, Reflector } from '@nestjs/core'
 import { FastifyAdapter, NestFastifyApplication } from '@nestjs/platform-fastify'
@@ -41,10 +41,11 @@ async function bootstrap() {
     type: VersioningType.URI,
   })
 
-  const _reflector = app.get(Reflector)
+  const reflector = app.get(Reflector)
 
-  // TODO: add global exception filter
-  // TODO: add global interceptor
+  // TODO: add global exception filter with json mapping message
+  app.useGlobalInterceptors(new ClassSerializerInterceptor(reflector))
+
   app.useGlobalPipes(
     new ValidationPipe({
       whitelist: true,
