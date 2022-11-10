@@ -1,5 +1,6 @@
 import { TypeOrmExModule } from '@modules/typeorm-ex.module'
 import { Module } from '@nestjs/common'
+import { CqrsModule } from '@nestjs/cqrs'
 
 import { UserController } from './controllers/user.controller'
 import { UserAdminController } from './controllers/user-admin.controller'
@@ -13,6 +14,6 @@ const CommandHandlers = []
 @Module({
   providers: [...QueryHandlers, ...CommandHandlers],
   controllers: [UserController, UserAdminController],
-  imports: [TypeOrmExModule.forCustomRepository([UserRepository])],
+  imports: [CqrsModule, TypeOrmExModule.forCustomRepository([UserRepository])],
 })
 export class UserModule {}

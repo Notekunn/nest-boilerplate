@@ -9,11 +9,12 @@ import { AuthController } from './controllers/auth.controller'
 import { CreateTokenCommandHandler } from './cqrs/commands/handler/create-token.handler'
 import { LoginByEmailCommandHandler } from './cqrs/commands/handler/login-by-email.handler'
 import { RegisterByEmailCommandHandler } from './cqrs/commands/handler/register-by-email.handler'
+import { JwtStrategy } from './jwt.strategy'
 import { LocalStrategy } from './local.strategy'
 
 const CommandHandlers = [LoginByEmailCommandHandler, RegisterByEmailCommandHandler, CreateTokenCommandHandler]
 @Module({
-  providers: [...CommandHandlers, LocalStrategy],
+  providers: [...CommandHandlers, LocalStrategy, JwtStrategy],
   controllers: [AuthController],
   imports: [
     JwtModule.registerAsync({
