@@ -3,7 +3,7 @@ import * as request from 'supertest'
 describe('Auth (e2e)', () => {
   const { API_URL, USER_EMAIL, USER_PASSWORD } = process.env
 
-  it.skip('register', () => {
+  it('register', () => {
     return request(API_URL)
       .post('/v1/auth/register')
       .send({
