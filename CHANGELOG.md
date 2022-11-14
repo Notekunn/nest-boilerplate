@@ -1,5 +1,12 @@
 # Nest boilerplate changelog
 
+# [1.2.0](https://github.com/Notekunn/nest-boilerplate/compare/v1.1.0...v1.2.0) (2022-11-14)
+
+
+### Features
+
+* add e2e testing ([#6](https://github.com/Notekunn/nest-boilerplate/issues/6)) ([ebbefe2](https://github.com/Notekunn/nest-boilerplate/commit/ebbefe20e8e37663d7f3cf640d37bddd39cf8399))
+
 # [1.1.0](https://github.com/Notekunn/nest-boilerplate/compare/v1.0.1...v1.1.0) (2022-11-10)
 
 
