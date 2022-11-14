@@ -28,7 +28,7 @@
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
-    "test:e2e": "env-cmd jest --config ./test/jest-e2e.config.js --forceExit"
+    "test:e2e": "jest --config ./test/jest-e2e.config.js --forceExit"
   },
   "dependencies": {
     "@fastify/helmet": "^10.0.2",
