@@ -37,7 +37,7 @@ jobs:
       - name: Run API in background
         run: |
           yarn build
-          node dist/main &
+          node dist/main > .log &
           echo $! > .pid
         env:
           SERVICE_HOST: 0.0.0.0
@@ -64,6 +64,9 @@ jobs:
           API_URL: http://localhost:3000
           USER_EMAIL: user@test.com
           USER_PASSWORD: Abcd12345-
+      - name: Show Log
+        if: failure()
+        run: cat .log
       - name: Kill API
         run: kill $(cat .pid)
         if: always()
