@@ -7,21 +7,57 @@ on:
       - '!main'
 
 jobs:
-  lint:
-    name: Run linter
+  test:
+    name: Run test
     runs-on: ubuntu-latest
+    timeout-minutes: 20
+    services:
+      postgres:
+        image: postgres:15
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: postgres
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
     steps:
       - uses: actions/checkout@v2.3.4
-
       - uses: actions/setup-node@v2.1.5
         with:
           node-version: '16'
-
       - name: Install package
         run: yarn
-
       - name: Check lint
         run: yarn lint
-
+      - name: Run API in background
+        run: |
+          yarn build
+          node dist/main &
+          echo $! > .pid
+          while ! echo exit | nc localhost 3000; do sleep 5;
+        env:
+          SERVICE_HOST: 0.0.0.0
+          SERVICE_PORT: 3000
+          DB_HOST: localhost
+          DB_PORT: ${{ job.services.postgres.ports['5432'] }}
+          DB_USERNAME: postgres
+          DB_PASSWORD: postgres
+          DB_NAME: postgres
+          DB_AUTO_RUN_MIGRATIONS: 'true'
+          DB_AUTO_SYNC: 'false'
+          JWT_SECRET_KEY: top_secret
+          JWT_EXPIRATION_TIME: 7d
       - name: Run test
-        run: yarn test
+        run: yarn test:e2e
+        env:
+          API_URL: http://localhost:3000
+          USER_EMAIL: user@test.com
+          USER_PASSWORD: Abcd12345-
+      - name: Kill API
+        run: kill $(cat .pid)
+        if: always()
