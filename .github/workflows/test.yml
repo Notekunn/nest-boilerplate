@@ -39,7 +39,6 @@ jobs:
           yarn build
           node dist/main &
           echo $! > .pid
-          while ! echo exit | nc localhost 3000; do sleep 5;
         env:
           SERVICE_HOST: 0.0.0.0
           SERVICE_PORT: 3000
@@ -52,6 +51,13 @@ jobs:
           DB_AUTO_SYNC: 'false'
           JWT_SECRET_KEY: top_secret
           JWT_EXPIRATION_TIME: 7d
+      - name: Healthcheck API
+        uses: jtalk/url-health-check-action@v3
+        with:
+          url: http://localhost:3000/v1/healthz
+          max-attempts: 5
+          retry-delay: 4s
+          retry-all: false
       - name: Run test
         run: yarn test:e2e
         env:
