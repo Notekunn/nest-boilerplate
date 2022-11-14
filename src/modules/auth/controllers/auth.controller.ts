@@ -20,6 +20,7 @@ export class AuthController {
     type: LoginResponseDto,
     status: 200,
   })
+  @HttpCode(200)
   @Post('login')
   async login(@Request() req) {
     const user = req.user

@@ -7,6 +7,7 @@
 - [x] Add github CI-CD for lint
 - [x] Setup semantic release
 - [x] Update readme
-- [ ] Implement base
-- [ ] Implement TypeORM
+- [x] Implement base
+- [x] Implement TypeORM
+- [x] Implement e2e testing
 - [ ] Add hygen
