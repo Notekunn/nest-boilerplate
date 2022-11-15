@@ -22,5 +22,5 @@ COPY --from=build /usr/src/build/node_modules ./node_modules
 COPY --from=build /usr/src/build/dist ./dist
 COPY --from=build /usr/src/build/package.json ./package.json
 
-
+CMD [ "yarn", "start:prod" ]
 
