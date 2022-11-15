@@ -1,5 +1,12 @@
 # Nest boilerplate changelog
 
+# [1.3.0](https://github.com/Notekunn/nest-boilerplate/compare/v1.2.0...v1.3.0) (2022-11-15)
+
+
+### Features
+
+* add image build action ([#8](https://github.com/Notekunn/nest-boilerplate/issues/8)) ([bde5e05](https://github.com/Notekunn/nest-boilerplate/commit/bde5e05bba0270191ba8d132455290ba92d6fad2))
+
 # [1.2.0](https://github.com/Notekunn/nest-boilerplate/compare/v1.1.0...v1.2.0) (2022-11-14)
 
 
