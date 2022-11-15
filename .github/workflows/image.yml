@@ -15,7 +15,7 @@ jobs:
         with:
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v3
         with:
           node-version: '16'
       - run: echo "RELEASE_VERSION=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
@@ -35,7 +35,7 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           push: true
-          tags: gcr.io/${{ secrets.PROJECT_ID }}/${{ env.SERVICE_NAME }}:${{ env.RELEASE_VERSION }}
+          tags: gcr.io/${{ secrets.GKE_PROJECT }}/${{ env.SERVICE_NAME }}:${{ env.RELEASE_VERSION }}
           build-args: |
             "SERVICE_VERSION=${{ env.RELEASE_VERSION }}"
           secrets: |
