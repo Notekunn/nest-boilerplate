@@ -26,6 +26,58 @@
 - Create a personal access token with `write:packages` scope [here](https://github.com/settings/tokens/new?scopes=write:packages,repo).
 - Add a secret `PAT` with above value
 
+## Setup Google Cloud
+
+- Install Google Cloud CLI [here](https://cloud.google.com/sdk/docs/install)
+- Setup Google Cloud CLI with `gcloud init` and create a project with billing account
+- Enable Container Registry API:
+
+```bash
+  gcloud services enable containerregistry.googleapis.com container.googleapis.com
+```
+
+- Config environment variables:
+
+```bash
+  export GKE_PROJECT=$(gcloud config get-value project)
+  export GKE_CLUSTER=nest-cluster
+  export GKE_ZONE=asia-southeast1-a
+  export SA_NAME=gke-sa
+  export SA_EMAIL=${SA_NAME}@${GKE_PROJECT}.iam.gserviceaccount.com
+```
+
+- Create a service account:
+
+```bash
+  gcloud iam service-accounts create $SA_NAME --display-name "GKE Service Account"
+```
+
+- Add role to service account:
+
+```bash
+  gcloud projects add-iam-policy-binding $GKE_PROJECT --member serviceAccount:$SA_EMAIL --role roles/container.admin
+  gcloud projects add-iam-policy-binding $GKE_PROJECT --member serviceAccount:$SA_EMAIL --role roles/storage.admin
+  gcloud projects add-iam-policy-binding $GKE_PROJECT --member serviceAccount:$SA_EMAIL --role roles/container.clusterViewer
+  gcloud projects add-iam-policy-binding $GKE_PROJECT --member serviceAccount:$SA_EMAIL --role roles/iam.serviceAccountTokenCreator
+```
+
+- Export service account key:
+
+```bash
+  gcloud iam service-accounts keys create key.json --iam-account $SA_EMAIL
+  export GKE_SA_KEY=$(cat key.json | base64)
+```
+
+- Add `GKE_PROJECT`, `GKE_CLUSTER`, `GKE_ZONE`, `GKE_SA_KEY`, to Github Action Secret
+
+## Setup GKE
+
+- Create cluster
+
+```bash
+ gcloud container clusters create $GKE_CLUSTER --zone $GKE_ZONE --machine-type n1-standard-1
+```
+
 ## Installation
 
 ```bash

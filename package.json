@@ -33,6 +33,7 @@
   "dependencies": {
     "@fastify/helmet": "^10.0.2",
     "@fastify/static": "^6.5.0",
+    "@nestjs-architects/typed-cqrs": "^1.0.0",
     "@nestjs/common": "^9.0.0",
     "@nestjs/config": "^2.2.0",
     "@nestjs/core": "^9.0.0",
@@ -60,7 +61,6 @@
   "devDependencies": {
     "@commitlint/cli": "^17.2.0",
     "@commitlint/config-conventional": "^17.2.0",
-    "@nestjs-architects/typed-cqrs": "^1.0.0",
     "@nestjs/cli": "^9.0.0",
     "@nestjs/schematics": "^9.0.0",
     "@nestjs/testing": "^9.0.0",
