@@ -1,4 +1,4 @@
-name: ✨
+name: e2e testing
 
 on:
   push:
@@ -10,7 +10,7 @@ on:
       - package.json
 
 jobs:
-  test:
+  check:
     name: Run test
     runs-on: ubuntu-latest
     timeout-minutes: 20

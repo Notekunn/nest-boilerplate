@@ -1,4 +1,4 @@
-name: ✨
+name: Validate Linter
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
       - '!main'
 
 jobs:
-  test:
+  check:
     name: Run test
     runs-on: ubuntu-latest
     steps:
