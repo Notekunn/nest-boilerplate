@@ -1,5 +1,12 @@
 # Nest boilerplate changelog
 
+## [1.5.1](https://github.com/Notekunn/nest-boilerplate/compare/v1.5.0...v1.5.1) (2023-01-15)
+
+
+### Bug Fixes
+
+* status code when wrong email and password ([#24](https://github.com/Notekunn/nest-boilerplate/issues/24)) ([46d715b](https://github.com/Notekunn/nest-boilerplate/commit/46d715b4e2ddf729cd2254cf8a413adc231af0af))
+
 # [1.5.0](https://github.com/Notekunn/nest-boilerplate/compare/v1.4.0...v1.5.0) (2023-01-15)
 
 
