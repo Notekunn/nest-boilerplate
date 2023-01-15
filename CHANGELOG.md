@@ -1,5 +1,12 @@
 # Nest boilerplate changelog
 
+# [1.5.0](https://github.com/Notekunn/nest-boilerplate/compare/v1.4.0...v1.5.0) (2023-01-15)
+
+
+### Features
+
+* add dependabot ([#17](https://github.com/Notekunn/nest-boilerplate/issues/17)) ([07d73d3](https://github.com/Notekunn/nest-boilerplate/commit/07d73d37a75152b497afe421766a9e449cb9c4f8))
+
 # [1.4.0](https://github.com/Notekunn/nest-boilerplate/compare/v1.3.1...v1.4.0) (2023-01-15)
 
 
