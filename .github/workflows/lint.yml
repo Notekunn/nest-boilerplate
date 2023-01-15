@@ -1,0 +1,23 @@
+name: ✨
+
+on:
+  push:
+    branches:
+      - '**'
+      - '!main'
+
+jobs:
+  test:
+    name: Run test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+      - name: Install package
+        run: yarn
+      - name: Check lint
+        run: yarn lint
+      - name: Run test
+        run: yarn test

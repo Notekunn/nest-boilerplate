@@ -5,6 +5,9 @@ on:
     branches:
       - '**'
       - '!main'
+    paths:
+      - 'src/*'
+      - package.json
 
 jobs:
   test:
@@ -13,7 +16,7 @@ jobs:
     timeout-minutes: 20
     services:
       postgres:
-        image: postgres:15
+        image: postgres:14
         env:
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
@@ -32,8 +35,6 @@ jobs:
           node-version: '16'
       - name: Install package
         run: yarn
-      - name: Check lint
-        run: yarn lint
       - name: Run API in background
         run: |
           yarn build
