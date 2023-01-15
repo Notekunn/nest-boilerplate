@@ -1,5 +1,12 @@
 # Nest boilerplate changelog
 
+# [1.4.0](https://github.com/Notekunn/nest-boilerplate/compare/v1.3.1...v1.4.0) (2023-01-15)
+
+
+### Features
+
+* add pagination ([#14](https://github.com/Notekunn/nest-boilerplate/issues/14)) ([ab2720b](https://github.com/Notekunn/nest-boilerplate/commit/ab2720bce4b0aac1090bfb4a4cb7458438eb8b03))
+
 ## [1.3.1](https://github.com/Notekunn/nest-boilerplate/compare/v1.3.0...v1.3.1) (2022-11-15)
 
 
