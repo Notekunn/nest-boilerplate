@@ -1,8 +1,13 @@
-import { PrimaryGeneratedColumn } from 'typeorm'
+import { UserEntity } from '@modules/users/entities/user.entity'
+import { Column, JoinColumn, ManyToOne } from 'typeorm'
 
 import { BaseEntity } from './base.entity'
 
 export class AbstractEntity extends BaseEntity {
-  @PrimaryGeneratedColumn()
-  id: number
+  @ManyToOne(() => UserEntity, { nullable: true, onDelete: 'SET NULL' })
+  @JoinColumn()
+  createdBy?: UserEntity
+
+  @Column({ nullable: true })
+  createdById?: number
 }
