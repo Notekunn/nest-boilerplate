@@ -1,5 +1,12 @@
 # Nest boilerplate changelog
 
+## [1.5.2](https://github.com/Notekunn/nest-boilerplate/compare/v1.5.1...v1.5.2) (2023-01-15)
+
+
+### Performance Improvements
+
+* optimize e2e testing github action ([#26](https://github.com/Notekunn/nest-boilerplate/issues/26)) ([b073bd2](https://github.com/Notekunn/nest-boilerplate/commit/b073bd28769587df205c5a48a8551a65fc34181e))
+
 ## [1.5.1](https://github.com/Notekunn/nest-boilerplate/compare/v1.5.0...v1.5.1) (2023-01-15)
 
 
