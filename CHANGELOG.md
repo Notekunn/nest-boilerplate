@@ -1,5 +1,13 @@
 # Nest boilerplate changelog
 
+## [1.5.4](https://github.com/Notekunn/nest-boilerplate/compare/v1.5.3...v1.5.4) (2023-01-16)
+
+
+### Bug Fixes
+
+* **deps-dev:** bump @semantic-release/changelog from 6.0.1 to 6.0.2 ([#19](https://github.com/Notekunn/nest-boilerplate/issues/19)) ([b288d38](https://github.com/Notekunn/nest-boilerplate/commit/b288d382b6e79bc8b601de6e0f40242b6e4a5766))
+* **deps:** bump passport-jwt from 4.0.0 to 4.0.1 ([#27](https://github.com/Notekunn/nest-boilerplate/issues/27)) ([37300de](https://github.com/Notekunn/nest-boilerplate/commit/37300de9d5ea2305eecf312bc39933ff31b90ad8))
+
 ## [1.5.3](https://github.com/Notekunn/nest-boilerplate/compare/v1.5.2...v1.5.3) (2023-01-15)
 
 
