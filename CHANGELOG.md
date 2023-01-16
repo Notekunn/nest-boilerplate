@@ -1,5 +1,12 @@
 # Nest boilerplate changelog
 
+## [1.5.5](https://github.com/Notekunn/nest-boilerplate/compare/v1.5.4...v1.5.5) (2023-01-16)
+
+
+### Bug Fixes
+
+* remove unuse deps ([#29](https://github.com/Notekunn/nest-boilerplate/issues/29)) ([490d86e](https://github.com/Notekunn/nest-boilerplate/commit/490d86e3bf343a777bfb1e989b5e356fec348e48))
+
 ## [1.5.4](https://github.com/Notekunn/nest-boilerplate/compare/v1.5.3...v1.5.4) (2023-01-16)
 
 
