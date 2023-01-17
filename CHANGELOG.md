@@ -1,5 +1,13 @@
 # Nest boilerplate changelog
 
+## [1.5.6](https://github.com/Notekunn/nest-boilerplate/compare/v1.5.5...v1.5.6) (2023-01-17)
+
+
+### Bug Fixes
+
+* **deps-dev:** bump @typescript-eslint/parser from 5.42.0 to 5.48.2 ([#32](https://github.com/Notekunn/nest-boilerplate/issues/32)) ([fc7dcbe](https://github.com/Notekunn/nest-boilerplate/commit/fc7dcbec05f9a19f670d204f74f0e33470c8b834))
+* **deps:** bump rimraf from 3.0.2 to 4.0.7 ([#30](https://github.com/Notekunn/nest-boilerplate/issues/30)) ([df5f947](https://github.com/Notekunn/nest-boilerplate/commit/df5f947ae290a9038fab1673037a804438317079))
+
 ## [1.5.5](https://github.com/Notekunn/nest-boilerplate/compare/v1.5.4...v1.5.5) (2023-01-16)
 
 
