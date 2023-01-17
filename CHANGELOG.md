@@ -1,5 +1,12 @@
 # Nest boilerplate changelog
 
+# [1.6.0](https://github.com/Notekunn/nest-boilerplate/compare/v1.5.6...v1.6.0) (2023-01-17)
+
+
+### Features
+
+* use custom schematics ([#36](https://github.com/Notekunn/nest-boilerplate/issues/36)) ([ea2ce53](https://github.com/Notekunn/nest-boilerplate/commit/ea2ce53bce62442053562a37e89ede670090286c))
+
 ## [1.5.6](https://github.com/Notekunn/nest-boilerplate/compare/v1.5.5...v1.5.6) (2023-01-17)
 
 
