@@ -1,13 +1,17 @@
 import { UserModule } from '@modules/users/user.module'
 import { Module } from '@nestjs/common'
 import { ConfigModule, ConfigService } from '@nestjs/config'
+import { QueryBus } from '@nestjs/cqrs'
 import { TypeOrmModule, TypeOrmModuleOptions } from '@nestjs/typeorm'
+import { AuthorizableUser, CaslModule } from 'nest-casl'
 
 import { AppController } from './app.controller'
+import { Roles } from './common/enum/role.enum'
 import { appConfiguration } from './configurations/app.config'
 import { jwtConfiguration } from './configurations/jwt.config'
 import { typeormConfiguration } from './configurations/typeorm.config'
 import { AuthModule } from './modules/auth/auth.module'
+import { GetUserByIdQuery } from './modules/users/cqrs/queries/impl/get-user-by-id.query'
 
 const appModules = [AuthModule, UserModule]
 
@@ -21,6 +25,12 @@ const appModules = [AuthModule, UserModule]
     TypeOrmModule.forRootAsync({
       inject: [ConfigService],
       useFactory: (configService: ConfigService) => configService.get<TypeOrmModuleOptions>('orm'),
+    }),
+    CaslModule.forRoot<Roles, AuthorizableUser<Roles, number>>({
+      superuserRole: Roles.Admin,
+      getUserFromRequest(request) {
+        return request.user
+      },
     }),
     ...appModules,
   ],

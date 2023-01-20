@@ -368,6 +368,13 @@
   resolved "https://registry.npmjs.org/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
+"@casl/ability@^6.0.0":
+  version "6.3.3"
+  resolved "https://registry.yarnpkg.com/@casl/ability/-/ability-6.3.3.tgz#219e958f191cd2163482abb6a5196593d319fc2a"
+  integrity sha512-UzbqsE9etu6QzZrRmqIyVun2kztAzJ46Tz7lC/2P2buCE6B6Ll7Vptz7JTQtGwapLbeKo2jS7dL966TVOQ7x4g==
+  dependencies:
+    "@ucast/mongo2js" "^1.3.0"
+
 "@colors/colors@1.5.0":
   version "1.5.0"
   resolved "https://registry.npmjs.org/@colors/colors/-/colors-1.5.0.tgz"
@@ -1933,6 +1940,41 @@
   dependencies:
     "@typescript-eslint/types" "5.48.2"
     eslint-visitor-keys "^3.3.0"
+
+"@ucast/core@^1.0.0", "@ucast/core@^1.10.1", "@ucast/core@^1.4.1", "@ucast/core@^1.6.1":
+  version "1.10.1"
+  resolved "https://registry.yarnpkg.com/@ucast/core/-/core-1.10.1.tgz#03a77a7804bcb5002a5cad3681e86cd1897e2e1f"
+  integrity sha512-sXKbvQiagjFh2JCpaHUa64P4UdJbOxYeC5xiZFn8y6iYdb0WkismduE+RmiJrIjw/eLDYmIEXiQeIYYowmkcAw==
+
+"@ucast/js@^3.0.0":
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/@ucast/js/-/js-3.0.2.tgz#862838ee68112c6c262d4f4693cc592ba83157e0"
+  integrity sha512-zxNkdIPVvqJjHI7D/iK8Aai1+59yqU+N7bpHFodVmiTN7ukeNiGGpNmmSjQgsUw7eNcEBnPrZHNzp5UBxwmaPw==
+  dependencies:
+    "@ucast/core" "^1.0.0"
+
+"@ucast/mongo2js@^1.3.0", "@ucast/mongo2js@^1.3.3":
+  version "1.3.3"
+  resolved "https://registry.yarnpkg.com/@ucast/mongo2js/-/mongo2js-1.3.3.tgz#a683a59cea22887a72e4302f3826e41ccf51dbbe"
+  integrity sha512-sBPtMUYg+hRnYeVYKL+ATm8FaRPdlU9PijMhGYKgsPGjV9J4Ks41ytIjGayvKUnBOEhiCaKUUnY4qPeifdqATw==
+  dependencies:
+    "@ucast/core" "^1.6.1"
+    "@ucast/js" "^3.0.0"
+    "@ucast/mongo" "^2.4.0"
+
+"@ucast/mongo@^2.4.0", "@ucast/mongo@^2.4.2":
+  version "2.4.2"
+  resolved "https://registry.yarnpkg.com/@ucast/mongo/-/mongo-2.4.2.tgz#a8a1c32e65ccab623be023e6cedb11d136d50f19"
+  integrity sha512-/zH1TdBJlYGKKD+Wh0oyD+aBvDSWrwHcD8b4tUL9UgHLhzHtkEnMVFuxbw3SRIRsAa01wmy06+LWt+WoZdj1Bw==
+  dependencies:
+    "@ucast/core" "^1.4.1"
+
+"@ucast/sql@^1.0.0-alpha.1":
+  version "1.0.0-alpha.1"
+  resolved "https://registry.yarnpkg.com/@ucast/sql/-/sql-1.0.0-alpha.1.tgz#575bf0e74252b05e87ec3c988e66533e6b7e245e"
+  integrity sha512-0XqQ5hskjO0FjCc259MxelpdAdKbx7rg3ZbS4NAudG6HB/ddnle1RtSlO/I+z/Y4viOmJgGDCC9NVIKm+5BG5g==
+  dependencies:
+    "@ucast/core" "^1.0.0"
 
 "@webassemblyjs/ast@1.11.1":
   version "1.11.1"
@@ -6713,6 +6755,17 @@ nerf-dart@^1.0.0:
   version "1.0.0"
   resolved "https://registry.npmjs.org/nerf-dart/-/nerf-dart-1.0.0.tgz"
   integrity sha512-EZSPZB70jiVsivaBLYDCyntd5eH8NTSMOn3rB+HxwdmKThGELLdYv8qVIMWvZEFy9w8ZZpW9h9OB32l1rGtj7g==
+
+nest-casl@^1.8.2:
+  version "1.8.2"
+  resolved "https://registry.yarnpkg.com/nest-casl/-/nest-casl-1.8.2.tgz#627606c8a327d950d762cc7207e8e750b84e562d"
+  integrity sha512-kuA5dPzCZLvYaxpTvkjB0SkY2Ize/mtPKSFembJt+FjTq8eKVoR2368Xz/C1v15kju3RonVm5x317oihAYdm3w==
+  dependencies:
+    "@casl/ability" "^6.0.0"
+    "@ucast/core" "^1.10.1"
+    "@ucast/mongo" "^2.4.2"
+    "@ucast/mongo2js" "^1.3.3"
+    "@ucast/sql" "^1.0.0-alpha.1"
 
 node-abort-controller@^3.0.1:
   version "3.0.1"

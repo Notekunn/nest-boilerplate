@@ -1,3 +1,4 @@
+import { Roles } from '@common/enum/role.enum'
 import { ApiProperty } from '@nestjs/swagger'
 
 export class JwtClaimsDto {
@@ -8,4 +9,9 @@ export class JwtClaimsDto {
   email: string
 
   //TODO: add roles
+  @ApiProperty({
+    enum: Roles,
+    isArray: true,
+  })
+  roles: Roles[]
 }
