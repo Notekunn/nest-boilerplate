@@ -1,6 +1,7 @@
 version: 2
 updates:
   - package-ecosystem: 'npm'
+    open-pull-requests-limit: 8
     directory: '/'
     versioning-strategy: 'increase'
     commit-message:
