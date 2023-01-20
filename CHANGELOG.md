@@ -1,5 +1,12 @@
 # Nest boilerplate changelog
 
+## [1.8.1](https://github.com/Notekunn/nest-boilerplate/compare/v1.8.0...v1.8.1) (2023-01-20)
+
+
+### Bug Fixes
+
+* **deps-dev:** bump husky from 8.0.1 to 8.0.3 ([#43](https://github.com/Notekunn/nest-boilerplate/issues/43)) ([6b332e8](https://github.com/Notekunn/nest-boilerplate/commit/6b332e8a10ff7162f3a6147496d519058ba49afc))
+
 # [1.8.0](https://github.com/Notekunn/nest-boilerplate/compare/v1.7.4...v1.8.0) (2023-01-20)
 
 
