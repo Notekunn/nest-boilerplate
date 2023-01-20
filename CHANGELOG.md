@@ -1,5 +1,12 @@
 # Nest boilerplate changelog
 
+## [1.7.2](https://github.com/Notekunn/nest-boilerplate/compare/v1.7.1...v1.7.2) (2023-01-20)
+
+
+### Bug Fixes
+
+* **deps-dev:** bump supertest from 6.3.1 to 6.3.3 ([#35](https://github.com/Notekunn/nest-boilerplate/issues/35)) ([539f063](https://github.com/Notekunn/nest-boilerplate/commit/539f063fc92bbcd082316abf35a7e47823e2d891))
+
 ## [1.7.1](https://github.com/Notekunn/nest-boilerplate/compare/v1.7.0...v1.7.1) (2023-01-20)
 
 
