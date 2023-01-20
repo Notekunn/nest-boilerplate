@@ -1,5 +1,12 @@
 # Nest boilerplate changelog
 
+# [1.7.0](https://github.com/Notekunn/nest-boilerplate/compare/v1.6.0...v1.7.0) (2023-01-20)
+
+
+### Features
+
+* use casl role base ([#37](https://github.com/Notekunn/nest-boilerplate/issues/37)) ([c212b62](https://github.com/Notekunn/nest-boilerplate/commit/c212b62f9e44f087b6ad7522bc0e78343b7a675d))
+
 # [1.6.0](https://github.com/Notekunn/nest-boilerplate/compare/v1.5.6...v1.6.0) (2023-01-17)
 
 
