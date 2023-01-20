@@ -1,5 +1,12 @@
 # Nest boilerplate changelog
 
+# [1.8.0](https://github.com/Notekunn/nest-boilerplate/compare/v1.7.4...v1.8.0) (2023-01-20)
+
+
+### Features
+
+* add concurrency ([8c216ad](https://github.com/Notekunn/nest-boilerplate/commit/8c216ad277dae3fe6d750db73c22dc8fcb6e4136))
+
 ## [1.7.4](https://github.com/Notekunn/nest-boilerplate/compare/v1.7.3...v1.7.4) (2023-01-20)
 
 
