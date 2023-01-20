@@ -1,5 +1,12 @@
 # Nest boilerplate changelog
 
+## [1.7.1](https://github.com/Notekunn/nest-boilerplate/compare/v1.7.0...v1.7.1) (2023-01-20)
+
+
+### Bug Fixes
+
+* **deps-dev:** bump @commitlint/config-conventional ([#20](https://github.com/Notekunn/nest-boilerplate/issues/20)) ([efb1d2f](https://github.com/Notekunn/nest-boilerplate/commit/efb1d2fc6d316a3d1d987fcdea903453ae38679f))
+
 # [1.7.0](https://github.com/Notekunn/nest-boilerplate/compare/v1.6.0...v1.7.0) (2023-01-20)
 
 
