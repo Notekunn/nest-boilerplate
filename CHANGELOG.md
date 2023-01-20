@@ -1,5 +1,12 @@
 # Nest boilerplate changelog
 
+## [1.7.3](https://github.com/Notekunn/nest-boilerplate/compare/v1.7.2...v1.7.3) (2023-01-20)
+
+
+### Bug Fixes
+
+* change pr limit for dependabot ([cd4ba70](https://github.com/Notekunn/nest-boilerplate/commit/cd4ba70b8435c7cf9417b4e27bd856e381c42cca))
+
 ## [1.7.2](https://github.com/Notekunn/nest-boilerplate/compare/v1.7.1...v1.7.2) (2023-01-20)
 
 
