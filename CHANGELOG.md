@@ -1,5 +1,12 @@
 # Nest boilerplate changelog
 
+## [1.7.4](https://github.com/Notekunn/nest-boilerplate/compare/v1.7.3...v1.7.4) (2023-01-20)
+
+
+### Bug Fixes
+
+* **deps-dev:** bump @types/passport-jwt from 3.0.7 to 3.0.8 ([#38](https://github.com/Notekunn/nest-boilerplate/issues/38)) ([61f5b2f](https://github.com/Notekunn/nest-boilerplate/commit/61f5b2f2f81ffc5c4e6db87d0eeed0803b545efa))
+
 ## [1.7.3](https://github.com/Notekunn/nest-boilerplate/compare/v1.7.2...v1.7.3) (2023-01-20)
 
 
