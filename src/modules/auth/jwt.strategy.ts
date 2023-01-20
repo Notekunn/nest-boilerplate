@@ -18,7 +18,6 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
 
   async validate({ id: userId }): Promise<JwtClaimsDto> {
     const user = await this.queryBus.execute(new GetUserByIdQuery(userId))
-
-    return user
+    return { ...user, roles: [user.role] }
   }
 }

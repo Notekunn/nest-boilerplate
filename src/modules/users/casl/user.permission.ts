@@ -2,7 +2,7 @@ import { Subject } from '@casl/ability'
 import { Roles } from '@common/enum/role.enum'
 import { Actions, Permissions } from 'nest-casl'
 
-import { UserEntity } from './entities/user.entity'
+import { UserEntity } from '../entities/user.entity'
 
 export const permissions: Permissions<Roles, Subject, Actions> = {
   everyone({ can }) {

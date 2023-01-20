@@ -9,11 +9,12 @@ export class CreateTokenCommandHandler implements ICommandHandler<CreateTokenCom
   constructor(private readonly jwtService: JwtService) {}
   async execute(command: CreateTokenCommand) {
     const { user } = command
-    const { id, email } = user
+    const { id, email, role } = user
 
     const token = this.jwtService.sign({
       id,
       email,
+      roles: [role],
     })
     const { exp } = this.jwtService.verify(token)
 
