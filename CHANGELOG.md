@@ -1,5 +1,12 @@
 # Nest boilerplate changelog
 
+## [1.8.3](https://github.com/Notekunn/nest-boilerplate/compare/v1.8.2...v1.8.3) (2023-02-07)
+
+
+### Bug Fixes
+
+* **deps:** bump rxjs from 7.5.7 to 7.8.0 ([#47](https://github.com/Notekunn/nest-boilerplate/issues/47)) ([fda2956](https://github.com/Notekunn/nest-boilerplate/commit/fda29565440d00f8123e02d41711214b169fc889))
+
 ## [1.8.2](https://github.com/Notekunn/nest-boilerplate/compare/v1.8.1...v1.8.2) (2023-01-30)
 
 
