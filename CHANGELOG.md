@@ -1,5 +1,12 @@
 # Nest boilerplate changelog
 
+## [1.8.4](https://github.com/Notekunn/nest-boilerplate/compare/v1.8.3...v1.8.4) (2023-02-09)
+
+
+### Bug Fixes
+
+* **deps-dev:** bump ts-loader from 9.4.1 to 9.4.2 ([#41](https://github.com/Notekunn/nest-boilerplate/issues/41)) ([b0ac06d](https://github.com/Notekunn/nest-boilerplate/commit/b0ac06dd488abd45b4a9176991e993d45e50455c))
+
 ## [1.8.3](https://github.com/Notekunn/nest-boilerplate/compare/v1.8.2...v1.8.3) (2023-02-07)
 
 
