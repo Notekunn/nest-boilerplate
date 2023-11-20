@@ -1,5 +1,12 @@
 # Nest boilerplate changelog
 
+# [1.9.0](https://github.com/Notekunn/nest-boilerplate/compare/v1.8.4...v1.9.0) (2023-11-20)
+
+
+### Features
+
+* add review dog ([#96](https://github.com/Notekunn/nest-boilerplate/issues/96)) ([95a8cd4](https://github.com/Notekunn/nest-boilerplate/commit/95a8cd4ea6bf9debf18480c25d9261594a49bdae))
+
 ## [1.8.4](https://github.com/Notekunn/nest-boilerplate/compare/v1.8.3...v1.8.4) (2023-02-09)
 
 
