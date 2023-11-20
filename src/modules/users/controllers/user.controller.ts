@@ -8,13 +8,14 @@ import { AccessGuard, Actions, UseAbility } from 'nest-casl'
 
 import { UpdateUserCommand } from '../cqrs/commands/impl/update-user.command'
 import { GetUserByIdQuery } from '../cqrs/queries/impl/get-user-by-id.query'
+import { TestFilterDto } from '../dto/test-filter.dto'
 import { UpdateUserDto } from '../dto/update-user.dto'
 import { UserEntity } from '../entities/user.entity'
 
 @Controller('user')
 @ApiTags('user')
-@UseGuards(JwtAuthGuard)
-@ApiBearerAuth()
+// @UseGuards(JwtAuthGuard)
+// @ApiBearerAuth()
 export class UserController {
   constructor(private readonly queryBus: QueryBus, private readonly commandBus: CommandBus) {}
 
@@ -34,5 +35,10 @@ export class UserController {
   })
   updateProfile(@AuthUser() user: JwtClaimsDto, @Body() dto: UpdateUserDto) {
     return this.commandBus.execute(new UpdateUserCommand(user.id, dto))
+  }
+
+  @Post()
+  test(@Body() dto: TestFilterDto) {
+    return dto
   }
 }
