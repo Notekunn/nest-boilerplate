@@ -7,6 +7,7 @@ import * as morgan from 'morgan'
 
 import { AppModule } from './app.module'
 import { AppConfiguration } from './configurations/app.config'
+import { BadRequestExceptionFilter } from './filters/bad-request-exception.filter'
 import { setupSwagger } from './swagger'
 
 async function bootstrap() {
@@ -44,6 +45,7 @@ async function bootstrap() {
   const reflector = app.get(Reflector)
 
   // TODO: add global exception filter with json mapping message
+  app.useGlobalFilters(new BadRequestExceptionFilter(reflector))
   app.useGlobalInterceptors(new ClassSerializerInterceptor(reflector))
 
   app.useGlobalPipes(
