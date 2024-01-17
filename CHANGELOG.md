@@ -1,5 +1,17 @@
 # Nest boilerplate changelog
 
+## [1.9.1](https://github.com/Notekunn/nest-boilerplate/compare/v1.9.0...v1.9.1) (2024-01-17)
+
+
+### Bug Fixes
+
+* **deps:** bump class-validator from 0.13.2 to 0.14.1 ([#106](https://github.com/Notekunn/nest-boilerplate/issues/106)) ([2140a68](https://github.com/Notekunn/nest-boilerplate/commit/2140a6822e38db90eea8615f20d8ddfb81fbec71))
+
+
+### Reverts
+
+* review dog ([#103](https://github.com/Notekunn/nest-boilerplate/issues/103)) ([b897a03](https://github.com/Notekunn/nest-boilerplate/commit/b897a03282991fc637d7e2ae085dcaa34a59c776))
+
 # [1.9.0](https://github.com/Notekunn/nest-boilerplate/compare/v1.8.4...v1.9.0) (2023-11-20)
 
 
