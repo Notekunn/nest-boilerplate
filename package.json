@@ -63,7 +63,7 @@
     "@commitlint/config-conventional": "^17.4.2",
     "@nestjs/cli": "^9.1.9",
     "@nestjs/testing": "^9.0.0",
-    "@notekunn/schematics": "^1.5.2",
+    "@notekunn/schematics": "^1.8.0",
     "@semantic-release/changelog": "^6.0.2",
     "@semantic-release/commit-analyzer": "^9.0.2",
     "@semantic-release/git": "^10.0.1",
