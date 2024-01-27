@@ -1,5 +1,12 @@
 # Nest boilerplate changelog
 
+# [1.10.0](https://github.com/Notekunn/nest-boilerplate/compare/v1.9.1...v1.10.0) (2024-01-27)
+
+
+### Features
+
+* update nestjs schematics ([#109](https://github.com/Notekunn/nest-boilerplate/issues/109)) ([347ad33](https://github.com/Notekunn/nest-boilerplate/commit/347ad3356476fabb39089613997c37f1be5adb25))
+
 ## [1.9.1](https://github.com/Notekunn/nest-boilerplate/compare/v1.9.0...v1.9.1) (2024-01-17)
 
 
