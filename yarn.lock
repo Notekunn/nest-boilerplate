@@ -1081,10 +1081,10 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@notekunn/schematics@^1.8.0":
-  version "1.8.0"
-  resolved "https://registry.yarnpkg.com/@notekunn/schematics/-/schematics-1.8.0.tgz#d48b144a62a8e46fefdf9e955d5ddca2740de6bf"
-  integrity sha512-yyUyvkwyRdRd8WjPZJFm4oStPGBbIz1WfaAZ7kGgzVqlSnC4R8n5zBsa4lE/W6R2NQXc7kIES7BT4cnRrM1lBQ==
+"@notekunn/schematics@^1.8.1":
+  version "1.8.1"
+  resolved "https://registry.yarnpkg.com/@notekunn/schematics/-/schematics-1.8.1.tgz#90f273577e4ef0945083c650efa94948a512d86a"
+  integrity sha512-jTVBc84NrKZ1RYMdrheNQSWjrB3BelDQTyADn7uyfJI+i1EcR8tsJsOi/AOns/1GQHWxSTI6a7RtVxqaEh424Q==
   dependencies:
     "@angular-devkit/core" "^15.1.1"
     "@angular-devkit/schematics" "^15.1.1"
