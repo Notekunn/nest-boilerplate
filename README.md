@@ -10,79 +10,60 @@
 
 <p align="center">
   <a href="https://github.com/features/actions" target="blank"><img src="https://avatars.githubusercontent.com/u/44036562" height="80" alt="GitHub Actions Logo" /></a>
-  <a href="https://cloud.google.com/kubernetes-engine" target="blank"><img src="https://raw.githubusercontent.com/kubernetes/kubernetes/master/logo/logo.png" height="80" alt="Kubernetes Logo" /></a>
-  <a href="https://commitlint.js.org/" target="blank"><img src="https://raw.githubusercontent.com/conventional-changelog/commitlint/master/docs/assets/icon.svg" height="80" alt="CommitLint Logo" /></a>
+  <a href="https://commitlint.js.org/" target="blank"><img src="https://raw.githubusercontent.com/conventional-changelog/commitlint/master/docs/public/assets/icon.svg" height="80" alt="CommitLint Logo" /></a>
   <a href="https://semantic-release.gitbook.io/semantic-release/" target="blank"><img src="https://raw.githubusercontent.com/semantic-release/semantic-release/master/media/semantic-release-logo.svg" height="80" alt="Semantic Release Logo" /></a>
-  <a href="https://github.com/nestjs/swagger" target="blank"><img src="https://raw.githubusercontent.com/swagger-api/swagger-ui/master/dist/favicon-32x32.png" height="80" alt="CommitLint Logo" /></a>
+  <a href="https://github.com/nestjs/swagger" target="blank"><img src="https://raw.githubusercontent.com/swagger-api/swagger-ui/master/dist/favicon-32x32.png" height="80" alt="Swagger Logo" /></a>
   <a href="https://www.fastify.io/" target="blank"><img src="https://github.com/fastify/graphics/raw/HEAD/fastify-landscape-outlined.svg" height="80" alt="Fastify Logo" /></a>
 </p>
 
 ## Description
 
-[Nest](https://github.com/nestjs/nest) boilerplate with [Typescript](https://www.typescriptlang.org/) 🎶, [Postgres](https://www.postgresql.org/) 🐬, [TypeORM](https://typeorm.io/) 🎉and fully CI-CD with [GitHub Action](https://github.com/features/actions) 🏃‍♂️ and [GKE](https://cloud.google.com/kubernetes-engine) 🐳
+[Nest](https://github.com/nestjs/nest) boilerplate with [Typescript](https://www.typescriptlang.org/) 🎶, [Postgres](https://www.postgresql.org/) 🐬, [TypeORM](https://typeorm.io/) 🎉 and fully CI-CD with [GitHub Action](https://github.com/features/actions) 🏃‍♂️
 
-## Setup Github Action Secret
+## Features
 
-- Create a personal access token with `write:packages` scope [here](https://github.com/settings/tokens/new?scopes=write:packages,repo).
-- Add a secret `PAT` with above value
+- 🚀 NestJS with TypeScript
+- 📦 PNPM as package manager
+- 🗄️ PostgreSQL with TypeORM
+- 📝 Swagger API documentation
+- 🧪 Jest for testing
+- 🎨 Prettier for code formatting
+- 🔍 ESLint for code linting
+- 🐳 Docker support
+- 🔄 GitHub Actions for CI/CD
+- 📝 Conventional Commits with CommitLint
+- 🚀 Semantic Release for versioning
 
-## Setup Google Cloud
+## Prerequisites
 
-- Install Google Cloud CLI [here](https://cloud.google.com/sdk/docs/install)
-- Setup Google Cloud CLI with `gcloud init` and create a project with billing account
-- Enable Container Registry API:
+- Node.js (v22 or higher)
+- PNPM (v8 or higher)
+- PostgreSQL (v14 or higher)
+- Docker (optional, for containerization)
 
-```bash
-  gcloud services enable containerregistry.googleapis.com container.googleapis.com
-```
+## Setup GitHub Action Secret
 
-- Config environment variables:
-
-```bash
-  export GKE_PROJECT=$(gcloud config get-value project)
-  export GKE_CLUSTER=nest-cluster
-  export GKE_ZONE=asia-southeast1-a
-  export SA_NAME=gke-sa
-  export SA_EMAIL=${SA_NAME}@${GKE_PROJECT}.iam.gserviceaccount.com
-```
-
-- Create a service account:
-
-```bash
-  gcloud iam service-accounts create $SA_NAME --display-name "GKE Service Account"
-```
-
-- Add role to service account:
-
-```bash
-  gcloud projects add-iam-policy-binding $GKE_PROJECT --member serviceAccount:$SA_EMAIL --role roles/container.admin
-  gcloud projects add-iam-policy-binding $GKE_PROJECT --member serviceAccount:$SA_EMAIL --role roles/storage.admin
-  gcloud projects add-iam-policy-binding $GKE_PROJECT --member serviceAccount:$SA_EMAIL --role roles/container.clusterViewer
-  gcloud projects add-iam-policy-binding $GKE_PROJECT --member serviceAccount:$SA_EMAIL --role roles/iam.serviceAccountTokenCreator
-```
-
-- Export service account key:
-
-```bash
-  gcloud iam service-accounts keys create key.json --iam-account $SA_EMAIL
-  export GKE_SA_KEY=$(cat key.json | base64)
-```
-
-- Add `GKE_PROJECT`, `GKE_CLUSTER`, `GKE_ZONE`, `GKE_SA_KEY`, to Github Action Secret
-
-## Setup GKE
-
-- Create cluster
-
-```bash
- gcloud container clusters create $GKE_CLUSTER --zone $GKE_ZONE --machine-type n1-standard-1
-```
+1. Create a personal access token with `write:packages` scope [here](https://github.com/settings/tokens/new?scopes=write:packages,repo)
+2. Add a secret `PAT` with the generated token value in your repository settings
 
 ## Installation
 
 ```bash
+# Install dependencies
 $ pnpm install
+
+# Copy environment file
+$ cp .env.example .env
 ```
+
+## Configuration
+
+1. Update the `.env` file with your database credentials and other configuration
+2. Default configuration includes:
+   - Database connection
+   - JWT settings
+   - API port
+   - Swagger documentation settings
 
 ## Running the app
 
@@ -95,41 +76,89 @@ $ pnpm start:dev
 
 # production mode
 $ pnpm start:prod
+
+# debug mode
+$ pnpm start:debug
 ```
 
-## Test
+## API Documentation
+
+Once the application is running, you can access the Swagger documentation at:
+```
+http://localhost:3000/api
+```
+
+## Testing
 
 ```bash
 # unit tests
 $ pnpm test
 
 # e2e tests
-$ pnpm start
 $ pnpm test:e2e
 
 # test coverage
 $ pnpm test:cov
+
+# test watch mode
+$ pnpm test:watch
 ```
 
-## TypeORM
+## Database Management
 
 ```bash
 # generate migration
-pnpm migration:generate MigrationName
+$ pnpm migration:generate MigrationName
 # or
-pnpm build && pnpm typeorm migration:generate -p ./src/database/migrations/MigrationName
+$ pnpm build && pnpm typeorm migration:generate -p ./src/database/migrations/MigrationName
 
 # run migration
-pnpm migration:run
-```
+$ pnpm migration:run
 
-- Other commands:
+# revert migration
+$ pnpm migration:revert
 
-```bash
 # drop schema
-pnpm typeorm schema:drop
+$ pnpm typeorm schema:drop
 
 # create migration
-pnpm migration:create MigrationName
+$ pnpm migration:create MigrationName
+```
+
+## Docker Support
+
+```bash
+# Build image
+$ docker build -t nest-boilerplate .
+
+# Run container
+$ docker run -p 3000:3000 nest-boilerplate
+```
+
+## Project Structure
 
 ```
+src/
+├── config/           # Configuration files
+├── database/         # Database configuration and migrations
+├── modules/          # Feature modules
+├── common/           # Common utilities and decorators
+├── filters/          # Exception filters
+├── guards/           # Guards
+├── interceptors/     # Interceptors
+├── middlewares/      # Middlewares
+├── pipes/            # Pipes
+└── main.ts          # Application entry point
+```
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'feat: add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
