@@ -1,5 +1,12 @@
 # Nest boilerplate changelog
 
+## [1.13.2](https://github.com/Notekunn/nest-boilerplate/compare/v1.13.1...v1.13.2) (2025-03-29)
+
+
+### Bug Fixes
+
+* lower case ([#127](https://github.com/Notekunn/nest-boilerplate/issues/127)) ([f64abd7](https://github.com/Notekunn/nest-boilerplate/commit/f64abd7ebf3f91da9ae78a23fb00779f35af2108))
+
 ## [1.13.1](https://github.com/Notekunn/nest-boilerplate/compare/v1.13.0...v1.13.1) (2025-03-29)
 
 
