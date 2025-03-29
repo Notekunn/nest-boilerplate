@@ -20,7 +20,7 @@ jobs:
         with:
           node-version: '22'
       - name: Install package
-        run: corepack enable && pnpm
+        run: corepack enable && pnpm install
       - name: Check lint
         run: pnpm lint
       - name: Run test

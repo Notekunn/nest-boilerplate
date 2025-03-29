@@ -18,7 +18,7 @@ jobs:
         with:
           node-version: '22'
       - name: Build
-        run: corepack enable && pnpm && pnpm build
+        run: corepack enable && pnpm install && pnpm build
         env:
           NODE_AUTH_TOKEN: ${{ github.token }}
       - name: Release

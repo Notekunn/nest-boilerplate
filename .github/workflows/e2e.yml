@@ -38,7 +38,7 @@ jobs:
         with:
           node-version: '22'
       - name: Install package
-        run: pnpm
+        run: corepack enable && pnpm install
       - name: Run API in background
         run: |
           pnpm build
