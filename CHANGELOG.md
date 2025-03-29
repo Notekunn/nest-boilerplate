@@ -1,5 +1,12 @@
 # Nest boilerplate changelog
 
+# [1.13.0](https://github.com/Notekunn/nest-boilerplate/compare/v1.12.0...v1.13.0) (2025-03-29)
+
+
+### Features
+
+* upgrade dev package ([#125](https://github.com/Notekunn/nest-boilerplate/issues/125)) ([1d4c007](https://github.com/Notekunn/nest-boilerplate/commit/1d4c00761e785791666da942ddf567e2ef3ae7cb))
+
 # [1.12.0](https://github.com/Notekunn/nest-boilerplate/compare/v1.11.0...v1.12.0) (2025-03-29)
 
 
