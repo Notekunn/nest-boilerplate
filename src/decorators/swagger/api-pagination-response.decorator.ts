@@ -28,4 +28,3 @@ export const ApiPaginationResponse = <T extends Type<any>>(model: T) => {
     ApiExtraModels(model, PaginationResponseDto),
   )
 }
-1
