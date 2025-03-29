@@ -81,55 +81,55 @@
 ## Installation
 
 ```bash
-$ yarn install
+$ pnpm install
 ```
 
 ## Running the app
 
 ```bash
 # development
-$ yarn start
+$ pnpm start
 
 # watch mode
-$ yarn start:dev
+$ pnpm start:dev
 
 # production mode
-$ yarn start:prod
+$ pnpm start:prod
 ```
 
 ## Test
 
 ```bash
 # unit tests
-$ yarn test
+$ pnpm test
 
 # e2e tests
-$ yarn start
-$ yarn test:e2e
+$ pnpm start
+$ pnpm test:e2e
 
 # test coverage
-$ yarn test:cov
+$ pnpm test:cov
 ```
 
 ## TypeORM
 
 ```bash
 # generate migration
-yarn migration:generate MigrationName
+pnpm migration:generate MigrationName
 # or
-yarn build && yarn typeorm migration:generate -p ./src/database/migrations/MigrationName
+pnpm build && pnpm typeorm migration:generate -p ./src/database/migrations/MigrationName
 
 # run migration
-yarn migration:run
+pnpm migration:run
 ```
 
 - Other commands:
 
 ```bash
 # drop schema
-yarn typeorm schema:drop
+pnpm typeorm schema:drop
 
 # create migration
-yarn migration:create MigrationName
+pnpm migration:create MigrationName
 
 ```

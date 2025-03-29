@@ -1,16 +1,14 @@
 import { ExecutionContext, Injectable, UnauthorizedException } from '@nestjs/common'
 import { AuthGuard } from '@nestjs/passport'
+import { Observable } from 'rxjs'
 
 @Injectable()
 export class LocalAuthGuard extends AuthGuard('local') {
-  override canActivate(context: ExecutionContext) {
-    // Add your custom authentication logic here
-    // for example, call super.logIn(request) to establish a session.
+  override canActivate(context: ExecutionContext): boolean | Promise<boolean> | Observable<boolean> {
     return super.canActivate(context)
   }
 
   override handleRequest(err, user) {
-    // You can throw an exception based on either "info" or "err" arguments
     if (err || !user) {
       throw err || new UnauthorizedException('error.credentialsNotCorrect')
     }

@@ -1,20 +1,22 @@
-FROM node:16-alpine as build
+FROM node:22-slim as build
+
+RUN corepack enable
 
 # Create app directory
 WORKDIR /usr/src/build
 
 # Install app dependencies
-COPY ["package.json", "yarn.lock", "./"]
+COPY ["package.json", "pnpm-lock.yaml", "./"]
 
-RUN yarn install --frozen-lockfile
-# Bundle app source
+RUN pnpm install
+
 COPY . .
 
-RUN yarn build
+RUN pnpm build
 
-RUN yarn install --frozen-lockfile --production=true 
+RUN pnpm ci --production
 
-FROM node:16-alpine as prod
+FROM node:22-alpine as prod
 
 WORKDIR /usr/src/app
 
@@ -22,5 +24,5 @@ COPY --from=build /usr/src/build/node_modules ./node_modules
 COPY --from=build /usr/src/build/dist ./dist
 COPY --from=build /usr/src/build/package.json ./package.json
 
-CMD [ "yarn", "start:prod" ]
+CMD [ "pnpm", "start:prod" ]
 
