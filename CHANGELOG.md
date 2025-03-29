@@ -1,5 +1,12 @@
 # Nest boilerplate changelog
 
+# [1.12.0](https://github.com/Notekunn/nest-boilerplate/compare/v1.11.0...v1.12.0) (2025-03-29)
+
+
+### Features
+
+* migrate from yarn to pnpm ([#124](https://github.com/Notekunn/nest-boilerplate/issues/124)) ([c526394](https://github.com/Notekunn/nest-boilerplate/commit/c526394dc0b8f56414489d4d84bda8b8c748f94a))
+
 # [1.11.0](https://github.com/Notekunn/nest-boilerplate/compare/v1.10.0...v1.11.0) (2024-03-18)
 
 
