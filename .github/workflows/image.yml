@@ -25,11 +25,13 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.PAT }}
+      - name: Set image name
+        run: echo "IMAGE_NAME=`echo '${{ github.repository_owner }}/${{ env.SERVICE_NAME }}' | tr '[:upper:]' '[:lower:]'`" >> $GITHUB_ENV
       - name: Build and push
         uses: docker/build-push-action@v3
         with:
           push: true
-          tags: ghcr.io/${{ toLower(github.repository_owner) }}/${{ env.SERVICE_NAME }}:${{ env.RELEASE_VERSION }}
+          tags: ghcr.io/${{ env.IMAGE_NAME }}:${{ env.RELEASE_VERSION }}
           build-args: |
             "SERVICE_VERSION=${{ env.RELEASE_VERSION }}"
           secrets: |
