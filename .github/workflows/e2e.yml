@@ -36,12 +36,12 @@ jobs:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-          node-version: '16'
+          node-version: '22'
       - name: Install package
-        run: yarn
+        run: pnpm
       - name: Run API in background
         run: |
-          yarn build
+          pnpm build
           node dist/main > .log &
           echo $! > .pid
         env:
@@ -64,7 +64,7 @@ jobs:
           retry-delay: 5s
           retry-all: false
       - name: Run test
-        run: yarn test:e2e
+        run: pnpm test:e2e
         env:
           API_URL: http://localhost:3000
           USER_EMAIL: user@test.com

@@ -16,9 +16,9 @@ jobs:
           token: ${{ secrets.PAT }}
       - uses: actions/setup-node@v2.1.5
         with:
-          node-version: '16'
+          node-version: '22'
       - name: Build
-        run: yarn && yarn build
+        run: corepack enable && pnpm && pnpm build
         env:
           NODE_AUTH_TOKEN: ${{ github.token }}
       - name: Release

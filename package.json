@@ -20,10 +20,10 @@
     "start:ci": "nest start",
     "start:prod": "node dist/main",
     "typeorm": "node --require ts-node/register ./node_modules/typeorm/cli.js -d ./src/ormconfig.ts",
-    "migration:generate": "f() { yarn build && yarn typeorm migration:generate -p \"./src/databases/migrations/$@\"; }; f",
-    "migration:run": "yarn build && yarn typeorm migration:run",
-    "migration:revert": "yarn typeorm migration:revert",
-    "migration:create": "f() { yarn typeorm migration:create \"./src/databases/migrations/$@\"; }; f",
+    "migration:generate": "f() { pnpm build && pnpm typeorm migration:generate -p \"./src/databases/migrations/$@\"; }; f",
+    "migration:run": "pnpm build && pnpm typeorm migration:run",
+    "migration:revert": "pnpm typeorm migration:revert",
+    "migration:create": "f() { pnpm typeorm migration:create \"./src/databases/migrations/$@\"; }; f",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
@@ -113,5 +113,6 @@
     "coverageDirectory": "../coverage",
     "testEnvironment": "node"
   },
-  "repository": "git@github.com:Notekunn/nest-boilerplate.git"
+  "repository": "git@github.com:Notekunn/nest-boilerplate.git",
+  "packageManager": "pnpm@8.15.4"
 }
