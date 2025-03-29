@@ -1,5 +1,12 @@
 # Nest boilerplate changelog
 
+## [1.13.3](https://github.com/Notekunn/nest-boilerplate/compare/v1.13.2...v1.13.3) (2025-03-29)
+
+
+### Bug Fixes
+
+* docker build registry lower case ([#128](https://github.com/Notekunn/nest-boilerplate/issues/128)) ([a6f9b68](https://github.com/Notekunn/nest-boilerplate/commit/a6f9b6897bd2265de0eeba73f181130f60b720b0))
+
 ## [1.13.2](https://github.com/Notekunn/nest-boilerplate/compare/v1.13.1...v1.13.2) (2025-03-29)
 
 
