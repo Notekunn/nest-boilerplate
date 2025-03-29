@@ -4,6 +4,10 @@ updates:
     open-pull-requests-limit: 8
     directory: '/'
     versioning-strategy: 'increase'
+    registries:
+      - 'https://registry.npmjs.org'
+      - 'https://registry.yarnpkg.com'
+      - 'https://registry.pnpmjs.org'
     commit-message:
       prefix: 'fix'
       include: 'scope'
