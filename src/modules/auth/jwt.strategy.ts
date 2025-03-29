@@ -9,7 +9,10 @@ import { JwtClaimsDto } from './dto/jwt-claims.dto'
 
 @Injectable()
 export class JwtStrategy extends PassportStrategy(Strategy) {
-  constructor(public readonly configService: ConfigService, private readonly queryBus: QueryBus) {
+  constructor(
+    public readonly configService: ConfigService,
+    private readonly queryBus: QueryBus,
+  ) {
     super({
       jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
       secretOrKey: configService.get('jwt.secret'),

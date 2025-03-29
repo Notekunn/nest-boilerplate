@@ -8,7 +8,10 @@ import { RegisterByEmailCommand } from '../impl/register-by-email.command'
 
 @CommandHandler(RegisterByEmailCommand)
 export class RegisterByEmailCommandHandler {
-  constructor(private readonly queryBus: QueryBus, private readonly userRepository: UserRepository) {}
+  constructor(
+    private readonly queryBus: QueryBus,
+    private readonly userRepository: UserRepository,
+  ) {}
   async execute(command: RegisterByEmailCommand) {
     const {
       dto: { email, password },
