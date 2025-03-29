@@ -37,7 +37,7 @@ export class SnakeNamingStrategy extends DefaultNamingStrategy implements Naming
     return snakeCase(`${parentTableName}_${parentTableIdPropertyName}`)
   }
 
-  override eagerJoinRelationAlias(alias: string, propertyPath: string): string {
+  eagerJoinRelationAlias(alias: string, propertyPath: string): string {
     return snakeCase(`${alias}__${propertyPath}`)
   }
 }

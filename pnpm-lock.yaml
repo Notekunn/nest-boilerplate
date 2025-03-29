@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@casl/ability':
+    specifier: ^6.7.3
+    version: 6.7.3
   '@fastify/helmet':
     specifier: ^10.0.2
     version: 10.1.1
