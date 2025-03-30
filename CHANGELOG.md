@@ -1,5 +1,12 @@
 # Nest boilerplate changelog
 
+## [1.13.6](https://github.com/Notekunn/nest-boilerplate/compare/v1.13.5...v1.13.6) (2025-03-30)
+
+
+### Bug Fixes
+
+* change tsconfig version, add more eslint rule and split shared class ([#131](https://github.com/Notekunn/nest-boilerplate/issues/131)) ([cd9a880](https://github.com/Notekunn/nest-boilerplate/commit/cd9a880c7aff91791884dbadcc97ccdcfdb301db))
+
 ## [1.13.5](https://github.com/Notekunn/nest-boilerplate/compare/v1.13.4...v1.13.5) (2025-03-30)
 
 
