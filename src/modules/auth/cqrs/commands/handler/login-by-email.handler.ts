@@ -1,7 +1,7 @@
 import { GetUserByEmailQuery } from '@modules/users/cqrs/queries/impl/get-user-by-email.query'
 import { BadRequestException } from '@nestjs/common'
 import { CommandHandler, ICommandHandler, QueryBus } from '@nestjs/cqrs'
-import { UtilService } from '@shared/utils.service'
+import { validateHash } from '@root/shared/security.utils'
 
 import { LoginByEmailCommand } from '../impl/login-by-email.command'
 
@@ -16,7 +16,7 @@ export class LoginByEmailCommandHandler implements ICommandHandler<LoginByEmailC
       throw new BadRequestException('error.userPasswordNotMatching')
     }
 
-    const isPasswordMatching = await UtilService.validateHash(password, user.password)
+    const isPasswordMatching = await validateHash(password, user.password)
 
     if (!isPasswordMatching) {
       throw new BadRequestException('error.userPasswordNotMatching')

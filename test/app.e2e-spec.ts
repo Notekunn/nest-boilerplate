@@ -1,4 +1,4 @@
-import * as request from 'supertest'
+import request from 'supertest'
 
 describe('AppController (e2e)', () => {
   const apiURL = process.env.API_URL

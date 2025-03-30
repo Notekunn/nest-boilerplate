@@ -1,7 +1,7 @@
 import { UserRepository } from '@modules/users/repositories/user.repository'
 import { NotFoundException } from '@nestjs/common'
 import { CommandHandler, ICommandHandler } from '@nestjs/cqrs'
-import { UtilService } from '@shared/utils.service'
+import { generateHash } from '@root/shared/security.utils'
 
 import { UpdateUserCommand } from '../impl/update-user.command'
 
@@ -19,7 +19,7 @@ export class UpdateUserCommandHandler implements ICommandHandler<UpdateUserComma
     if (!_user) throw new NotFoundException('error.userNotFound')
 
     if (dto.password) {
-      dto.password = UtilService.generateHash(dto.password)
+      dto.password = generateHash(dto.password)
     }
 
     const user = this.userRepository.merge(_user, dto)

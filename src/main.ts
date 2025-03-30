@@ -3,7 +3,7 @@ import { ClassSerializerInterceptor, Logger, ValidationPipe, VersioningType } fr
 import { ConfigService } from '@nestjs/config'
 import { NestFactory, Reflector } from '@nestjs/core'
 import { FastifyAdapter, NestFastifyApplication } from '@nestjs/platform-fastify'
-import * as morgan from 'morgan'
+import morgan from 'morgan'
 
 import { AppModule } from './app.module'
 import { AppConfiguration } from './configurations/app.config'
