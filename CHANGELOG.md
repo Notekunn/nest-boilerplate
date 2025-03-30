@@ -1,5 +1,12 @@
 # Nest boilerplate changelog
 
+## [1.13.5](https://github.com/Notekunn/nest-boilerplate/compare/v1.13.4...v1.13.5) (2025-03-30)
+
+
+### Bug Fixes
+
+* update core dependency ([#130](https://github.com/Notekunn/nest-boilerplate/issues/130)) ([514de23](https://github.com/Notekunn/nest-boilerplate/commit/514de23455f5d86a0897d6f192ff65cadc8b81cd))
+
 ## [1.13.4](https://github.com/Notekunn/nest-boilerplate/compare/v1.13.3...v1.13.4) (2025-03-30)
 
 
