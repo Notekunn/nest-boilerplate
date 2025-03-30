@@ -4,12 +4,14 @@ import { ConfigService } from '@nestjs/config'
 import { NestFactory, Reflector } from '@nestjs/core'
 import { FastifyAdapter, NestFastifyApplication } from '@nestjs/platform-fastify'
 import morgan from 'morgan'
+import { initializeTransactionalContext, StorageDriver } from 'typeorm-transactional'
 
 import { AppModule } from './app.module'
 import { AppConfiguration } from './configurations/app.config'
 import { setupSwagger } from './swagger'
 
 async function bootstrap() {
+  initializeTransactionalContext({ storageDriver: StorageDriver.AUTO })
   const app = await NestFactory.create<NestFastifyApplication>(AppModule, new FastifyAdapter())
 
   const logger = new Logger('bootstrap')

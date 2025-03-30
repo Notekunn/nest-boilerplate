@@ -3,6 +3,8 @@ import { Module } from '@nestjs/common'
 import { ConfigModule, ConfigService } from '@nestjs/config'
 import { TypeOrmModule, TypeOrmModuleOptions } from '@nestjs/typeorm'
 import { AuthorizableUser, CaslModule } from 'nest-casl'
+import { DataSource } from 'typeorm'
+import { addTransactionalDataSource } from 'typeorm-transactional'
 
 import { AppController } from './app.controller'
 import { Roles } from './common/enum/role.enum'
@@ -23,6 +25,13 @@ const appModules = [AuthModule, UserModule]
     TypeOrmModule.forRootAsync({
       inject: [ConfigService],
       useFactory: (configService: ConfigService) => configService.get<TypeOrmModuleOptions>('orm'),
+      dataSourceFactory: async (options) => {
+        if (!options) {
+          throw new Error('Invalid options passed')
+        }
+
+        return addTransactionalDataSource(new DataSource(options))
+      },
     }),
     CaslModule.forRoot<Roles, AuthorizableUser<Roles, number>>({
       superuserRole: Roles.Admin,
