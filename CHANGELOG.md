@@ -1,5 +1,13 @@
 # Nest boilerplate changelog
 
+## [1.14.1](https://github.com/Notekunn/nest-boilerplate/compare/v1.14.0...v1.14.1) (2025-03-30)
+
+
+### Bug Fixes
+
+* dto ([1431032](https://github.com/Notekunn/nest-boilerplate/commit/14310323e048b1dec6f9d8da7f294b52fadc1aef))
+* validation option ([81e96e9](https://github.com/Notekunn/nest-boilerplate/commit/81e96e9f6692e4aeff2e0d7cbb7e4b1834152286))
+
 # [1.14.0](https://github.com/Notekunn/nest-boilerplate/compare/v1.13.6...v1.14.0) (2025-03-30)
 
 
