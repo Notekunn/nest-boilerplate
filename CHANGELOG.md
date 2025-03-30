@@ -1,5 +1,12 @@
 # Nest boilerplate changelog
 
+# [1.14.0](https://github.com/Notekunn/nest-boilerplate/compare/v1.13.6...v1.14.0) (2025-03-30)
+
+
+### Features
+
+* add typeorm transactional ([#132](https://github.com/Notekunn/nest-boilerplate/issues/132)) ([eff1414](https://github.com/Notekunn/nest-boilerplate/commit/eff141434b6e44ff2bd0bb6baedf3c6a1ddbc0c6))
+
 ## [1.13.6](https://github.com/Notekunn/nest-boilerplate/compare/v1.13.5...v1.13.6) (2025-03-30)
 
 
