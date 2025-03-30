@@ -1,10 +1,10 @@
-import { BaseEntity } from '@common/entities/base.entity'
 import { Roles } from '@common/enum/role.enum'
+import { MetaEntity } from '@root/common/entities/meta.entity'
 import { Exclude } from 'class-transformer'
 import { Column, Entity } from 'typeorm'
 
 @Entity('user')
-export class UserEntity extends BaseEntity {
+export class UserEntity extends MetaEntity {
   @Column()
   email: string
 
