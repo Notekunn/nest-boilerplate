@@ -1,4 +1,4 @@
-import * as request from 'supertest'
+import request from 'supertest'
 
 describe('Auth (e2e)', () => {
   const { API_URL, USER_EMAIL, USER_PASSWORD } = process.env

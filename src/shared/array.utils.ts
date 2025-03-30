@@ -6,11 +6,12 @@ export function pickOne<T>(arr: T[]): T {
 
 export function pickMany<T>(arr: T[], take?: number): T[] {
   const itemCount = arr.length
-  if (!take) {
-    take = randomInt(itemCount)
-  }
 
-  if (take >= itemCount) return arr
+  if (!itemCount || take >= itemCount) return arr
+
+  if (!take) {
+    take = randomInt(1, itemCount)
+  }
 
   const randomIndex: number[] = []
   while (randomIndex.length < take) {
