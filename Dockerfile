@@ -1,4 +1,4 @@
-FROM node:22-slim as build
+FROM node:22-slim AS build
 
 RUN corepack enable
 
@@ -8,15 +8,15 @@ WORKDIR /usr/src/build
 # Install app dependencies
 COPY ["package.json", "pnpm-lock.yaml", "./"]
 
-RUN pnpm install
+RUN pnpm install --frozen-lockfile --ignore-scripts
 
 COPY . .
 
 RUN pnpm build
 
-RUN pnpm ci --production
+RUN pnpm install --prod --frozen-lockfile --ignore-scripts
 
-FROM node:22-alpine as prod
+FROM node:22-alpine AS prod
 
 WORKDIR /usr/src/app
 
