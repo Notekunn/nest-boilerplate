@@ -106,6 +106,5 @@
     "tsconfig-paths": "4.2.0",
     "typescript": "^5.8.2"
   },
-  "repository": "git@github.com:Notekunn/nest-boilerplate.git",
   "packageManager": "pnpm@10.7.0"
 }
