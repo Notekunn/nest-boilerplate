@@ -1,5 +1,12 @@
 # Nest boilerplate changelog
 
+## [1.14.3](https://github.com/Notekunn/nest-boilerplate/compare/v1.14.2...v1.14.3) (2025-03-31)
+
+
+### Bug Fixes
+
+* bump schematic ([#134](https://github.com/Notekunn/nest-boilerplate/issues/134)) ([d3187c6](https://github.com/Notekunn/nest-boilerplate/commit/d3187c6cb07cd64caa2061d088656c8fb8ee86d3))
+
 ## [1.14.2](https://github.com/Notekunn/nest-boilerplate/compare/v1.14.1...v1.14.2) (2025-03-31)
 
 
