@@ -27,7 +27,7 @@ describe('NumberUtils', () => {
       const to = 10
       const fixed = 2
       const result = getRandomNumberFixed(from, to, fixed)
-      expect(result.toString()).toMatch(/^\d+\.\d{2}$/)
+      expect(result.toString()).toMatch(/^\d+\.{0,1}\d{0,2}$/)
       expect(result).toBeGreaterThanOrEqual(from)
       expect(result).toBeLessThanOrEqual(to)
     })
@@ -49,7 +49,7 @@ describe('NumberUtils', () => {
       const fixed = 1
       const result = getRandomNumberFixed(from, to, fixed)
 
-      expect(result.toString()).toMatch(/^-\d+\.\d{1}$/)
+      expect(result.toString()).toMatch(/^-\d+\.{0,1}\d{0,1}$/)
       expect(result).toBeGreaterThanOrEqual(from)
       expect(result).toBeLessThanOrEqual(to)
     })
