@@ -1,5 +1,13 @@
 # Nest boilerplate changelog
 
+## [1.14.4](https://github.com/Notekunn/nest-boilerplate/compare/v1.14.3...v1.14.4) (2025-03-31)
+
+
+### Bug Fixes
+
+* github perm ([#135](https://github.com/Notekunn/nest-boilerplate/issues/135)) ([76d360e](https://github.com/Notekunn/nest-boilerplate/commit/76d360e55b77e851ce03b64202e15571c70bd852))
+* release permission ([74bf148](https://github.com/Notekunn/nest-boilerplate/commit/74bf148a681a44f5b4036e1007e3a9ec03a68f35))
+
 ## [1.14.3](https://github.com/Notekunn/nest-boilerplate/compare/v1.14.2...v1.14.3) (2025-03-31)
 
 
