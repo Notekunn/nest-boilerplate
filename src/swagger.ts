@@ -1,11 +1,16 @@
 import type { INestApplication } from '@nestjs/common'
 import { DocumentBuilder, type SwaggerCustomOptions, SwaggerModule } from '@nestjs/swagger'
 
-export function setupSwagger(app: INestApplication, version: string): void {
+import type { AppConfiguration } from './configurations/app.config'
+
+export function setupSwagger(app: INestApplication, appConfig: AppConfiguration): void {
+  const { host, port, version } = appConfig
   const options = new DocumentBuilder()
     .setTitle('NestJS Boilerplate API Documentation')
     .setVersion(version)
     .addBearerAuth()
+    .setDescription('API documentation for the NestJS Boilerplate application')
+    .addServer(`http://${host}:${port}`, 'Local')
     .addTag('auth', 'Authenticate user')
     .addTag('user', 'Manage user account')
     .build()

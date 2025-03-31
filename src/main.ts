@@ -17,6 +17,12 @@ async function bootstrap() {
   const logger = new Logger('bootstrap')
 
   const configService = app.get(ConfigService)
+  const appConfig = configService.get<AppConfiguration>('app')
+  const { host, port } = appConfig
+
+  if (process.env.NODE_ENV !== 'production') {
+    setupSwagger(app, appConfig)
+  }
 
   app.enableCors({
     origin: '*',
@@ -56,12 +62,6 @@ async function bootstrap() {
       forbidUnknownValues: true,
     }),
   )
-
-  const { host, port, version } = configService.get<AppConfiguration>('app')
-
-  if (process.env.NODE_ENV !== 'production') {
-    setupSwagger(app, version)
-  }
 
   await app.listen(port, host)
 
