@@ -7,7 +7,7 @@ env:
   SERVICE_NAME: nest-application # TODO: Change this to your service name
 
 permissions:
-  contents: read
+  contents: write
   pull-requests: write
   packages: write
 
