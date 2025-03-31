@@ -6,6 +6,16 @@
 ### Bug Fixes
 
 * github perm ([#135](https://github.com/Notekunn/nest-boilerplate/issues/135)) ([76d360e](https://github.com/Notekunn/nest-boilerplate/commit/76d360e55b77e851ce03b64202e15571c70bd852))
+* image release ([8277f24](https://github.com/Notekunn/nest-boilerplate/commit/8277f24da920ecafe93da070104cd9ea797e8caa))
+* release permission ([74bf148](https://github.com/Notekunn/nest-boilerplate/commit/74bf148a681a44f5b4036e1007e3a9ec03a68f35))
+* swagger ([d84d847](https://github.com/Notekunn/nest-boilerplate/commit/d84d847f9a17528569aff1cbb6a5a34e33b79126))
+
+## [1.14.4](https://github.com/Notekunn/nest-boilerplate/compare/v1.14.3...v1.14.4) (2025-03-31)
+
+
+### Bug Fixes
+
+* github perm ([#135](https://github.com/Notekunn/nest-boilerplate/issues/135)) ([76d360e](https://github.com/Notekunn/nest-boilerplate/commit/76d360e55b77e851ce03b64202e15571c70bd852))
 * release permission ([74bf148](https://github.com/Notekunn/nest-boilerplate/commit/74bf148a681a44f5b4036e1007e3a9ec03a68f35))
 * swagger ([d84d847](https://github.com/Notekunn/nest-boilerplate/commit/d84d847f9a17528569aff1cbb6a5a34e33b79126))
 
