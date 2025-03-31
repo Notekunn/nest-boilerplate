@@ -1,5 +1,12 @@
 # Nest boilerplate changelog
 
+## [1.14.5](https://github.com/Notekunn/nest-boilerplate/compare/v1.14.4...v1.14.5) (2025-03-31)
+
+
+### Bug Fixes
+
+* remove registry ([9e9f3db](https://github.com/Notekunn/nest-boilerplate/commit/9e9f3db468ba82ac6aa67c64d82432747211f6f0))
+
 ## [1.14.4](https://github.com/Notekunn/nest-boilerplate/compare/v1.14.3...v1.14.4) (2025-03-31)
 
 
