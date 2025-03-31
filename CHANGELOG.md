@@ -1,5 +1,12 @@
 # Nest boilerplate changelog
 
+## [1.14.2](https://github.com/Notekunn/nest-boilerplate/compare/v1.14.1...v1.14.2) (2025-03-31)
+
+
+### Bug Fixes
+
+* docker build non root user ([#133](https://github.com/Notekunn/nest-boilerplate/issues/133)) ([08484b7](https://github.com/Notekunn/nest-boilerplate/commit/08484b7f6f153aa0ab921ec1b2b76dd0cf8130d8))
+
 ## [1.14.1](https://github.com/Notekunn/nest-boilerplate/compare/v1.14.0...v1.14.1) (2025-03-30)
 
 
