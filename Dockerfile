@@ -16,13 +16,14 @@ RUN pnpm build
 
 RUN pnpm install --prod --frozen-lockfile --ignore-scripts
 
-FROM node:22-alpine AS prod
+FROM node:22-slim AS prod
 
 WORKDIR /usr/src/app
 
-COPY --from=build /usr/src/build/node_modules ./node_modules
-COPY --from=build /usr/src/build/dist ./dist
-COPY --from=build /usr/src/build/package.json ./package.json
+COPY --from=build --chown=node:node /usr/src/build/node_modules ./node_modules
+COPY --from=build --chown=node:node /usr/src/build/dist ./dist
+COPY --from=build --chown=node:node /usr/src/build/package.json ./package.json
 
-CMD [ "pnpm", "start:prod" ]
+USER node
+CMD [ "npm", "run", "start:prod" ]
 
