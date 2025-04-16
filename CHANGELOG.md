@@ -1,5 +1,14 @@
 # Nest boilerplate changelog
 
+## [1.14.13](https://github.com/Notekunn/nest-boilerplate/compare/v1.14.12...v1.14.13) (2025-04-16)
+
+
+### Bug Fixes
+
+* **deps-dev:** bump eslint-plugin-prettier from 5.2.5 to 5.2.6 ([#139](https://github.com/Notekunn/nest-boilerplate/issues/139)) ([9f25bab](https://github.com/Notekunn/nest-boilerplate/commit/9f25bab4490579b741f548caa436208857ba3dd2))
+* **deps-dev:** bump typescript from 5.8.2 to 5.8.3 ([#138](https://github.com/Notekunn/nest-boilerplate/issues/138)) ([d22192c](https://github.com/Notekunn/nest-boilerplate/commit/d22192cb0663023d93357fb9d5a6c3057e0a4eed))
+* release ([9e3c6e2](https://github.com/Notekunn/nest-boilerplate/commit/9e3c6e2b8bdbaa0fa0d770bac7a937a6ad80201d))
+
 ## [1.14.12](https://github.com/Notekunn/nest-boilerplate/compare/v1.14.11...v1.14.12) (2025-04-16)
 
 
