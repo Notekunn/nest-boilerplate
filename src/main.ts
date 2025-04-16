@@ -20,6 +20,15 @@ async function bootstrap() {
   const appConfig = configService.get<AppConfiguration>('app')
   const { host, port } = appConfig
 
+  if (process.env.DISABLE_MORGAN !== 'true') {
+    app.use(morgan('dev'))
+  }
+
+  app.enableVersioning({
+    defaultVersion: '1',
+    type: VersioningType.URI,
+  })
+
   if (process.env.NODE_ENV !== 'production') {
     setupSwagger(app, appConfig)
   }
@@ -40,13 +49,6 @@ async function bootstrap() {
         scriptSrc: ["'self'", "https: 'unsafe-inline'"],
       },
     },
-  })
-
-  app.use(morgan('dev'))
-
-  app.enableVersioning({
-    defaultVersion: '1',
-    type: VersioningType.URI,
   })
 
   const reflector = app.get(Reflector)
