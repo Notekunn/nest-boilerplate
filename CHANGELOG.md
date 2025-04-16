@@ -1,5 +1,12 @@
 # Nest boilerplate changelog
 
+## [1.14.10](https://github.com/Notekunn/nest-boilerplate/compare/v1.14.9...v1.14.10) (2025-04-16)
+
+
+### Bug Fixes
+
+* **deps-dev:** bump @nestjs/cli from 11.0.5 to 11.0.6 ([#142](https://github.com/Notekunn/nest-boilerplate/issues/142)) ([6c22ed3](https://github.com/Notekunn/nest-boilerplate/commit/6c22ed30cb3615854621ed61e0881bc6378225fa))
+
 ## [1.14.9](https://github.com/Notekunn/nest-boilerplate/compare/v1.14.8...v1.14.9) (2025-04-16)
 
 
