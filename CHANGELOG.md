@@ -1,5 +1,12 @@
 # Nest boilerplate changelog
 
+## [1.14.6](https://github.com/Notekunn/nest-boilerplate/compare/v1.14.5...v1.14.6) (2025-04-16)
+
+
+### Bug Fixes
+
+* swagger ([fcd01d6](https://github.com/Notekunn/nest-boilerplate/commit/fcd01d611b2c9125f593923f596420a7a0481ba3))
+
 ## [1.14.5](https://github.com/Notekunn/nest-boilerplate/compare/v1.14.4...v1.14.5) (2025-03-31)
 
 
