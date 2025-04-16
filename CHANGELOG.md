@@ -1,5 +1,12 @@
 # Nest boilerplate changelog
 
+## [1.14.9](https://github.com/Notekunn/nest-boilerplate/compare/v1.14.8...v1.14.9) (2025-04-16)
+
+
+### Bug Fixes
+
+* **deps:** bump typeorm from 0.3.21 to 0.3.22 ([#136](https://github.com/Notekunn/nest-boilerplate/issues/136)) ([a7f03ab](https://github.com/Notekunn/nest-boilerplate/commit/a7f03ab6fa4978bb44f503b7d78f8e1faf712863))
+
 ## [1.14.8](https://github.com/Notekunn/nest-boilerplate/compare/v1.14.7...v1.14.8) (2025-04-16)
 
 
