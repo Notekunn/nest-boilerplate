@@ -14,11 +14,11 @@ jobs:
     name: Release
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2.3.4
+      - uses: actions/checkout@v3
         with:
           fetch-depth: 0
           token: ${{ secrets.PAT }}
-      - uses: actions/setup-node@v2.1.5
+      - uses: actions/setup-node@v3
         with:
           node-version: '22'
       - name: Build
