@@ -1,5 +1,12 @@
 # Nest boilerplate changelog
 
+## [1.14.12](https://github.com/Notekunn/nest-boilerplate/compare/v1.14.11...v1.14.12) (2025-04-16)
+
+
+### Bug Fixes
+
+* **deps-dev:** bump eslint-config-prettier from 10.1.1 to 10.1.2 ([#141](https://github.com/Notekunn/nest-boilerplate/issues/141)) ([c7badbe](https://github.com/Notekunn/nest-boilerplate/commit/c7badbef8cda3dc6c598d51b6fb4dc2d22320006))
+
 ## [1.14.11](https://github.com/Notekunn/nest-boilerplate/compare/v1.14.10...v1.14.11) (2025-04-16)
 
 
