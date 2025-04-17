@@ -1,5 +1,12 @@
 # Nest boilerplate changelog
 
+## [1.14.14](https://github.com/Notekunn/nest-boilerplate/compare/v1.14.13...v1.14.14) (2025-04-17)
+
+
+### Bug Fixes
+
+* remove root ([00a186c](https://github.com/Notekunn/nest-boilerplate/commit/00a186cff67c8ef93f6d210eceb8eedc82fcc422))
+
 ## [1.14.13](https://github.com/Notekunn/nest-boilerplate/compare/v1.14.12...v1.14.13) (2025-04-16)
 
 
