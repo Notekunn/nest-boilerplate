@@ -1,5 +1,5 @@
+import { MetaEntity } from '@common/entities/meta.entity'
 import { Roles } from '@common/enum/role.enum'
-import { MetaEntity } from '@root/common/entities/meta.entity'
 import { Exclude } from 'class-transformer'
 import { Column, Entity } from 'typeorm'
 

@@ -1,7 +1,7 @@
+import { JwtAuthGuard } from '@guards/jwt-auth.guard'
 import { Body, Controller, Param, ParseIntPipe, Put, UseGuards } from '@nestjs/common'
 import { CommandBus } from '@nestjs/cqrs'
 import { ApiBearerAuth, ApiOperation, ApiTags } from '@nestjs/swagger'
-import { JwtAuthGuard } from '@root/guards/jwt-auth.guard'
 import { AccessGuard, Actions, UseAbility } from 'nest-casl'
 
 import { UserHook } from '../casl/user.hook'

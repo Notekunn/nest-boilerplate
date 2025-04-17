@@ -1,7 +1,7 @@
 import { GetUserByEmailQuery } from '@modules/users/cqrs/queries/impl/get-user-by-email.query'
 import { BadRequestException } from '@nestjs/common'
 import { CommandHandler, ICommandHandler, QueryBus } from '@nestjs/cqrs'
-import { validateHash } from '@root/shared/security.utils'
+import { validateHash } from '@shared/security.utils'
 
 import { LoginByEmailCommand } from '../impl/login-by-email.command'
 

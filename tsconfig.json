@@ -22,7 +22,6 @@
     "isolatedModules": true,
     "verbatimModuleSyntax": false,
     "paths": {
-      "@root/*": ["./src/*"],
       "@common/*": ["./src/common/*"],
       "@constants/*": ["./src/constants/*"],
       "@decorators/*": ["./src/decorators/*"],

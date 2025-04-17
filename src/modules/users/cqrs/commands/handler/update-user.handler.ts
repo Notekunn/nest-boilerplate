@@ -1,7 +1,7 @@
 import { UserRepository } from '@modules/users/repositories/user.repository'
 import { NotFoundException } from '@nestjs/common'
 import { CommandHandler, ICommandHandler } from '@nestjs/cqrs'
-import { generateHash } from '@root/shared/security.utils'
+import { generateHash } from '@shared/security.utils'
 
 import { UpdateUserCommand } from '../impl/update-user.command'
 

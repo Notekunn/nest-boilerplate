@@ -2,7 +2,7 @@ import { GetUserByEmailQuery } from '@modules/users/cqrs/queries/impl/get-user-b
 import { UserRepository } from '@modules/users/repositories/user.repository'
 import { ConflictException } from '@nestjs/common'
 import { CommandHandler, QueryBus } from '@nestjs/cqrs'
-import { generateHash } from '@root/shared/security.utils'
+import { generateHash } from '@shared/security.utils'
 import { Transactional } from 'typeorm-transactional'
 
 import { RegisterByEmailCommand } from '../impl/register-by-email.command'
