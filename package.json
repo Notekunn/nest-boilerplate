@@ -78,7 +78,7 @@
     "@semantic-release/release-notes-generator": "^14.0.3",
     "@types/jest": "29.5.14",
     "@types/morgan": "^1.9.9",
-    "@types/node": "^22.13.14",
+    "@types/node": "^24.0.10",
     "@types/passport": "^1.0.17",
     "@types/passport-jwt": "^4.0.1",
     "@types/supertest": "^6.0.3",
