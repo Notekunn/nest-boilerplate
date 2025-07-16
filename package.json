@@ -40,7 +40,7 @@
     "@nestjs-architects/typed-cqrs": "^2.1.0",
     "@nestjs/common": "^11.0.19",
     "@nestjs/config": "^4.0.2",
-    "@nestjs/core": "^11.0.19",
+    "@nestjs/core": "^11.1.4",
     "@nestjs/cqrs": "^11.0.3",
     "@nestjs/jwt": "^11.0.0",
     "@nestjs/passport": "^11.0.5",
