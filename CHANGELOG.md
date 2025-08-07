@@ -1,5 +1,12 @@
 # Nest boilerplate changelog
 
+## [1.14.17](https://github.com/Notekunn/nest-boilerplate/compare/v1.14.16...v1.14.17) (2025-08-07)
+
+
+### Bug Fixes
+
+* security ([d622bc3](https://github.com/Notekunn/nest-boilerplate/commit/d622bc30abdbbae9f7acd3357b2b3663fa8b3c3a))
+
 ## [1.14.16](https://github.com/Notekunn/nest-boilerplate/compare/v1.14.15...v1.14.16) (2025-08-07)
 
 
