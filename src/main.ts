@@ -18,7 +18,7 @@ async function bootstrap() {
 
   const configService = app.get(ConfigService)
   const appConfig = configService.get<AppConfiguration>('app')
-  const { host, port } = appConfig
+  const { host, port, corsOrigins } = appConfig
 
   if (process.env.DISABLE_MORGAN !== 'true') {
     app.use(morgan('dev'))
@@ -34,7 +34,7 @@ async function bootstrap() {
   }
 
   app.enableCors({
-    origin: '*',
+    origin: corsOrigins.length > 0 ? corsOrigins : '*',
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     allowedHeaders: 'Content-Type, Accept, Authorization',
     credentials: true,
@@ -46,7 +46,12 @@ async function bootstrap() {
         defaultSrc: ["'self'"],
         styleSrc: ["'self'", "'unsafe-inline'"],
         imgSrc: ["'self'", 'data:', 'validator.swagger.io'],
-        scriptSrc: ["'self'", "https: 'unsafe-inline'"],
+        scriptSrc: ["'self'"],
+        connectSrc: ["'self'"],
+        fontSrc: ["'self'"],
+        objectSrc: ["'none'"],
+        mediaSrc: ["'self'"],
+        frameSrc: ["'none'"],
       },
     },
   })
