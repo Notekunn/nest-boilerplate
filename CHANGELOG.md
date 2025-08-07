@@ -1,5 +1,12 @@
 # Nest boilerplate changelog
 
+## [1.14.16](https://github.com/Notekunn/nest-boilerplate/compare/v1.14.15...v1.14.16) (2025-08-07)
+
+
+### Bug Fixes
+
+* **deps:** bump nest/code and nest/testing ([d922552](https://github.com/Notekunn/nest-boilerplate/commit/d922552227e9203c21ce6fa6f267283103509d94))
+
 ## [1.14.15](https://github.com/Notekunn/nest-boilerplate/compare/v1.14.14...v1.14.15) (2025-08-07)
 
 
