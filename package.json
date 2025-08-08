@@ -2,9 +2,9 @@
   "name": "nest-boilerplate",
   "version": "1.14.17",
   "description": "",
-  "author": "DC <cuong.nl5.kma@gmail.com>",
+  "author": "Notekunn <cuong.nl5.kma@gmail.com>",
   "private": true,
-  "license": "UNLICENSED",
+  "license": "MIT",
   "engines": {
     "node": ">=22.14.0"
   },
