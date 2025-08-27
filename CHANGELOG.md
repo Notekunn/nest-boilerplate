@@ -1,5 +1,12 @@
 # Nest boilerplate changelog
 
+## [1.14.21](https://github.com/Notekunn/nest-boilerplate/compare/v1.14.20...v1.14.21) (2025-08-27)
+
+
+### Bug Fixes
+
+* update GitHub Actions workflow to use secrets.PAT instead of github.token ([a8f50d4](https://github.com/Notekunn/nest-boilerplate/commit/a8f50d41588af6ab386056b2fcd620d3ef9e52db))
+
 ## [1.14.20](https://github.com/Notekunn/nest-boilerplate/compare/v1.14.19...v1.14.20) (2025-08-27)
 
 
