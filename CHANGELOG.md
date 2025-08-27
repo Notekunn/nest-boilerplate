@@ -1,5 +1,12 @@
 # Nest boilerplate changelog
 
+## [1.14.23](https://github.com/Notekunn/nest-boilerplate/compare/v1.14.22...v1.14.23) (2025-08-27)
+
+
+### Bug Fixes
+
+* docker build image ([6c217ee](https://github.com/Notekunn/nest-boilerplate/commit/6c217ee0176541d82634e31b08a35bb1e1e4da2b))
+
 ## [1.14.22](https://github.com/Notekunn/nest-boilerplate/compare/v1.14.21...v1.14.22) (2025-08-27)
 
 
