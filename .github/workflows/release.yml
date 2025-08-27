@@ -34,4 +34,4 @@ jobs:
           npx semantic-release
         env:
           GH_TOKEN: ${{ secrets.PAT }}
-          NODE_AUTH_TOKEN: ${{ github.token }}
+          NODE_AUTH_TOKEN: ${{ secrets.PAT }}
