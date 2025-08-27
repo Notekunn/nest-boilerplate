@@ -1,5 +1,12 @@
 # Nest boilerplate changelog
 
+## [1.14.19](https://github.com/Notekunn/nest-boilerplate/compare/v1.14.18...v1.14.19) (2025-08-27)
+
+
+### Bug Fixes
+
+* **deps-dev:** bump eslint from 9.32.0 to 9.34.0 ([#239](https://github.com/Notekunn/nest-boilerplate/issues/239)) ([f7a52c0](https://github.com/Notekunn/nest-boilerplate/commit/f7a52c009a57e415cf0a72dee002edcb6f98ae99))
+
 ## [1.14.18](https://github.com/Notekunn/nest-boilerplate/compare/v1.14.17...v1.14.18) (2025-08-22)
 
 
