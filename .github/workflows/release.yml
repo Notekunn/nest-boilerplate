@@ -33,5 +33,5 @@ jobs:
           git config --global user.name "GitHub Action"
           npx semantic-release
         env:
-          GH_TOKEN: ${{ github.token }}
+          GH_TOKEN: ${{ secrets.PAT }}
           NODE_AUTH_TOKEN: ${{ github.token }}
