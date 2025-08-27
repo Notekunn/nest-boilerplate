@@ -1,5 +1,12 @@
 # Nest boilerplate changelog
 
+## [1.14.22](https://github.com/Notekunn/nest-boilerplate/compare/v1.14.21...v1.14.22) (2025-08-27)
+
+
+### Bug Fixes
+
+* ci cd ([a687821](https://github.com/Notekunn/nest-boilerplate/commit/a687821143f99f790d15fdc727f01475c20e6b13))
+
 ## [1.14.21](https://github.com/Notekunn/nest-boilerplate/compare/v1.14.20...v1.14.21) (2025-08-27)
 
 
