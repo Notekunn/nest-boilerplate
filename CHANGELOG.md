@@ -1,5 +1,12 @@
 # Nest boilerplate changelog
 
+## [1.14.24](https://github.com/Notekunn/nest-boilerplate/compare/v1.14.23...v1.14.24) (2025-09-08)
+
+
+### Bug Fixes
+
+* bump dependency and action version ([c8cfa8a](https://github.com/Notekunn/nest-boilerplate/commit/c8cfa8ac346718e5c8370eb8aed4a40261cd5878))
+
 ## [1.14.23](https://github.com/Notekunn/nest-boilerplate/compare/v1.14.22...v1.14.23) (2025-08-27)
 
 
