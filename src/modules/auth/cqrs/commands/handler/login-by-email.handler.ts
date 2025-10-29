@@ -5,6 +5,8 @@ import { validateHash } from '@shared/security.utils'
 
 import { LoginByEmailCommand } from '../impl/login-by-email.command'
 
+const INVALID_CREDENTIALS_ERROR = 'error.userPasswordNotMatching'
+
 @CommandHandler(LoginByEmailCommand)
 export class LoginByEmailCommandHandler implements ICommandHandler<LoginByEmailCommand> {
   constructor(private readonly queryBus: QueryBus) {}
@@ -13,13 +15,13 @@ export class LoginByEmailCommandHandler implements ICommandHandler<LoginByEmailC
     const { email, password } = _command
     const user = await this.queryBus.execute(new GetUserByEmailQuery(email))
     if (!user) {
-      throw new BadRequestException('error.userPasswordNotMatching')
+      throw new BadRequestException(INVALID_CREDENTIALS_ERROR)
     }
 
     const isPasswordMatching = await validateHash(password, user.password)
 
     if (!isPasswordMatching) {
-      throw new BadRequestException('error.userPasswordNotMatching')
+      throw new BadRequestException(INVALID_CREDENTIALS_ERROR)
     }
 
     return user
