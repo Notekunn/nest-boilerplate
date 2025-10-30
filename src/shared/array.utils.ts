@@ -13,13 +13,11 @@ export function pickMany<T>(arr: T[], take?: number): T[] {
     take = randomInt(1, itemCount)
   }
 
-  const randomIndex: number[] = []
-  while (randomIndex.length < take) {
+  const randomIndexSet = new Set<number>()
+  while (randomIndexSet.size < take) {
     const r = randomInt(itemCount)
-    if (!randomIndex.includes(r)) {
-      randomIndex.push(r)
-    }
+    randomIndexSet.add(r)
   }
 
-  return randomIndex.map((index) => arr[index])
+  return [...randomIndexSet].map((index) => arr[index])
 }

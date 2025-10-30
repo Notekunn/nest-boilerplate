@@ -19,7 +19,7 @@ export class UpdateUserCommandHandler implements ICommandHandler<UpdateUserComma
     if (!_user) throw new NotFoundException('error.userNotFound')
 
     if (dto.password) {
-      dto.password = generateHash(dto.password)
+      dto.password = await generateHash(dto.password)
     }
 
     const user = this.userRepository.merge(_user, dto)
