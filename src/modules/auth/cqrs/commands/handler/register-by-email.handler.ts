@@ -27,7 +27,7 @@ export class RegisterByEmailCommandHandler {
 
     const newUser = this.userRepository.create({
       email,
-      password: generateHash(password),
+      password: await generateHash(password),
     })
 
     return await this.userRepository.save(newUser)
