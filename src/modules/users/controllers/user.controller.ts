@@ -35,7 +35,7 @@ export class UserController {
   @ApiOperation({
     summary: 'Update user profile',
   })
-  updateProfile(@AuthUser() user: JwtClaimsDto, @Body() dto: UpdateUserDto) {
-    return this.commandBus.execute(new UpdateUserCommand(user.id, dto))
+  updateProfile(@AuthUser() user: JwtClaimsDto, @Body() updateDto: UpdateUserDto) {
+    return this.commandBus.execute(new UpdateUserCommand(user.id, updateDto))
   }
 }
