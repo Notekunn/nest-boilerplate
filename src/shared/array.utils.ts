@@ -1,13 +1,13 @@
 import { randomInt } from 'crypto'
 
-export function pickOne<T>(arr: T[]): T {
-  return arr[randomInt(arr.length)]
+export function pickOne<T>(array: T[]): T {
+  return array[randomInt(array.length)]
 }
 
-export function pickMany<T>(arr: T[], take?: number): T[] {
-  const itemCount = arr.length
+export function pickMany<T>(array: T[], take?: number): T[] {
+  const itemCount = array.length
 
-  if (!itemCount || take >= itemCount) return arr
+  if (!itemCount || take >= itemCount) return array
 
   if (!take) {
     take = randomInt(1, itemCount)
@@ -21,5 +21,5 @@ export function pickMany<T>(arr: T[], take?: number): T[] {
     }
   }
 
-  return randomIndices.map((index) => arr[index])
+  return randomIndices.map((index) => array[index])
 }
