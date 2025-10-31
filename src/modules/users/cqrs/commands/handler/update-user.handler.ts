@@ -10,19 +10,19 @@ export class UpdateUserCommandHandler implements ICommandHandler<UpdateUserComma
   constructor(private readonly userRepository: UserRepository) {}
   async execute(command: UpdateUserCommand) {
     const { userId, dto } = command
-    const _user = await this.userRepository.findOne({
+    const existingUser = await this.userRepository.findOne({
       where: {
         id: userId,
       },
     })
 
-    if (!_user) throw new NotFoundException('error.userNotFound')
+    if (!existingUser) throw new NotFoundException('error.userNotFound')
 
     if (dto.password) {
       dto.password = generateHash(dto.password)
     }
 
-    const user = this.userRepository.merge(_user, dto)
+    const user = this.userRepository.merge(existingUser, dto)
     await this.userRepository.save(user)
     return user
   }
