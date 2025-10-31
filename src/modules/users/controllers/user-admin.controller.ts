@@ -21,7 +21,7 @@ export class UserAdminController {
   @ApiOperation({
     summary: 'Update user profile (admin)',
   })
-  updateProfile(@Param('id', ParseIntPipe) id: number, @Body() dto: UpdateUserDto) {
-    return this.commandBus.execute(new UpdateUserCommand(id, dto))
+  updateProfile(@Param('id', ParseIntPipe) id: number, @Body() updateDto: UpdateUserDto) {
+    return this.commandBus.execute(new UpdateUserCommand(id, updateDto))
   }
 }
