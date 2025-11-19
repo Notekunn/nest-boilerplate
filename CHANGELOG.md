@@ -1,5 +1,12 @@
 # Nest boilerplate changelog
 
+# [1.15.0](https://github.com/Notekunn/nest-boilerplate/compare/v1.14.24...v1.15.0) (2025-11-19)
+
+
+### Features
+
+* implement unit and e2e tests for auth and user api ([#290](https://github.com/Notekunn/nest-boilerplate/issues/290)) ([622668d](https://github.com/Notekunn/nest-boilerplate/commit/622668d1511f9d8a2b1618f4704c8f47e76541b1))
+
 ## [1.14.24](https://github.com/Notekunn/nest-boilerplate/compare/v1.14.23...v1.14.24) (2025-09-08)
 
 
