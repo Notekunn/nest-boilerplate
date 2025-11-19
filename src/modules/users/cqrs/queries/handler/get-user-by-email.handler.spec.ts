@@ -60,7 +60,7 @@ describe('GetUserByEmailQueryHandler', () => {
       expect(userRepository.findOne).toHaveBeenCalledWith({
         where: { email: 'notfound@example.com' },
       })
-      expect(result).toBeNull()
+      expect(result).toBeUndefined()
     })
 
     it('should query with correct email address', async () => {

@@ -105,7 +105,7 @@ describe('UserController', () => {
 
       const result = await controller.getProfile(mockJwtClaims)
 
-      expect(result).toBeNull()
+      expect(result).toBeUndefined()
     })
   })
 

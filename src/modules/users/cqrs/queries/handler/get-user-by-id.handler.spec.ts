@@ -60,7 +60,7 @@ describe('GetUserByIdQueryHandler', () => {
       expect(userRepository.findOne).toHaveBeenCalledWith({
         where: { id: 999 },
       })
-      expect(result).toBeNull()
+      expect(result).toBeUndefined()
     })
 
     it('should query with correct user id', async () => {
