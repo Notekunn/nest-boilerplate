@@ -28,7 +28,7 @@ export class PaginationDto {
   @ApiPropertyOptional()
   @IsString()
   @IsOptional()
-  readonly q?: string
+  readonly searchQuery?: string
 
   get skip(): number {
     return (this.page - 1) * this.take

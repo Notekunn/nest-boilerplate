@@ -19,10 +19,10 @@ export function getRandomString(length: number): string {
 
 /**
  *
- * @param enm enum variable
+ * @param enumeration enum variable
  * @param value string
  * @returns Enum
  */
-export function enumFromStringValue<T>(enm: { [s: string]: T }, value: string): T | undefined {
-  return (Object.values(enm) as unknown as string[]).includes(value) ? (value as unknown as T) : undefined
+export function enumFromStringValue<T>(enumeration: { [s: string]: T }, value: string): T | undefined {
+  return (Object.values(enumeration) as unknown as string[]).includes(value) ? (value as unknown as T) : undefined
 }

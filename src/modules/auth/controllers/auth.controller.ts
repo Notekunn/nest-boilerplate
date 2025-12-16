@@ -22,8 +22,8 @@ export class AuthController {
   })
   @HttpCode(200)
   @Post('login')
-  async login(@Request() req) {
-    const user = req.user
+  async login(@Request() request) {
+    const user = request.user
     const token = await this.commandBus.execute(new CreateTokenCommand(user))
 
     return { user, token }
@@ -35,8 +35,8 @@ export class AuthController {
     status: 201,
   })
   @HttpCode(201)
-  async register(@Body() dto: RegisterByEmailDto) {
-    const user = await this.commandBus.execute(new RegisterByEmailCommand(dto))
+  async register(@Body() registerDto: RegisterByEmailDto) {
+    const user = await this.commandBus.execute(new RegisterByEmailCommand(registerDto))
     const token = await this.commandBus.execute(new CreateTokenCommand(user))
 
     return { user, token }
