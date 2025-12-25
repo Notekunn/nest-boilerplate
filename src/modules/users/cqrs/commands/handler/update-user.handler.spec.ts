@@ -12,16 +12,16 @@ import { UpdateUserCommandHandler } from './update-user.handler'
 describe('UpdateUserCommandHandler', () => {
   let handler: UpdateUserCommandHandler
   let userRepository: UserRepository
-
-  const mockUser: Partial<UserEntity> = {
-    id: 1,
-    email: 'test@example.com',
-    name: 'Test User',
-    role: Roles.User,
-    password: generateHash('oldpassword'),
-  }
+  let mockUser: Partial<UserEntity>
 
   beforeEach(async () => {
+    mockUser = {
+      id: 1,
+      email: 'test@example.com',
+      name: 'Test User',
+      role: Roles.User,
+      password: await generateHash('oldpassword'),
+    }
     const module: TestingModule = await Test.createTestingModule({
       providers: [
         UpdateUserCommandHandler,
