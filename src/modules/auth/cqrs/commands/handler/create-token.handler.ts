@@ -7,6 +7,7 @@ import { CreateTokenCommand } from '../impl/create-token.command'
 @CommandHandler(CreateTokenCommand)
 export class CreateTokenCommandHandler implements ICommandHandler<CreateTokenCommand> {
   constructor(private readonly jwtService: JwtService) {}
+
   async execute(command: CreateTokenCommand) {
     const { user } = command
     const { id, email, role } = user
@@ -16,11 +17,13 @@ export class CreateTokenCommandHandler implements ICommandHandler<CreateTokenCom
       email,
       roles: [role],
     })
-    const { exp } = this.jwtService.verify(token)
+
+    const decoded = this.jwtService.decode(token) as { exp: number }
+    const expiresAt = new Date(decoded.exp * 1000)
 
     return new TokenResponseDto({
       token,
-      expiresIn: new Date(exp * 1000),
+      expiresAt,
     })
   }
 }

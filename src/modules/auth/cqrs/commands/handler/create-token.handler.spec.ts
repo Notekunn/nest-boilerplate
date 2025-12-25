@@ -28,7 +28,7 @@ describe('CreateTokenCommandHandler', () => {
           provide: JwtService,
           useValue: {
             sign: jest.fn(),
-            verify: jest.fn(),
+            decode: jest.fn(),
           },
         },
       ],
@@ -46,7 +46,7 @@ describe('CreateTokenCommandHandler', () => {
     it('should create a token with user information', async () => {
       const command = new CreateTokenCommand(mockUser as UserEntity)
       jest.spyOn(jwtService, 'sign').mockReturnValue(mockToken)
-      jest.spyOn(jwtService, 'verify').mockReturnValue({ exp: mockExp })
+      jest.spyOn(jwtService, 'decode').mockReturnValue({ exp: mockExp })
 
       const result = await handler.execute(command)
 
@@ -55,16 +55,16 @@ describe('CreateTokenCommandHandler', () => {
         email: mockUser.email,
         roles: [mockUser.role],
       })
-      expect(jwtService.verify).toHaveBeenCalledWith(mockToken)
+      expect(jwtService.decode).toHaveBeenCalledWith(mockToken)
       expect(result).toBeInstanceOf(TokenResponseDto)
       expect(result.token).toBe(mockToken)
-      expect(result.expiresIn).toEqual(new Date(mockExp * 1000))
+      expect(result.expiresAt).toEqual(new Date(mockExp * 1000))
     })
 
     it('should include user id, email, and role in token payload', async () => {
       const command = new CreateTokenCommand(mockUser as UserEntity)
       jest.spyOn(jwtService, 'sign').mockReturnValue(mockToken)
-      jest.spyOn(jwtService, 'verify').mockReturnValue({ exp: mockExp })
+      jest.spyOn(jwtService, 'decode').mockReturnValue({ exp: mockExp })
 
       await handler.execute(command)
 
@@ -84,7 +84,7 @@ describe('CreateTokenCommandHandler', () => {
       }
       const command = new CreateTokenCommand(adminUser as UserEntity)
       jest.spyOn(jwtService, 'sign').mockReturnValue(mockToken)
-      jest.spyOn(jwtService, 'verify').mockReturnValue({ exp: mockExp })
+      jest.spyOn(jwtService, 'decode').mockReturnValue({ exp: mockExp })
 
       await handler.execute(command)
 
@@ -95,25 +95,25 @@ describe('CreateTokenCommandHandler', () => {
     it('should return valid TokenResponseDto', async () => {
       const command = new CreateTokenCommand(mockUser as UserEntity)
       jest.spyOn(jwtService, 'sign').mockReturnValue(mockToken)
-      jest.spyOn(jwtService, 'verify').mockReturnValue({ exp: mockExp })
+      jest.spyOn(jwtService, 'decode').mockReturnValue({ exp: mockExp })
 
       const result = await handler.execute(command)
 
       expect(result).toHaveProperty('token')
-      expect(result).toHaveProperty('expiresIn')
+      expect(result).toHaveProperty('expiresAt')
       expect(result.token).toBeTruthy()
-      expect(result.expiresIn).toBeInstanceOf(Date)
+      expect(result.expiresAt).toBeInstanceOf(Date)
     })
 
     it('should correctly convert exp timestamp to Date', async () => {
       const specificExp = 1700000000 // Specific timestamp
       const command = new CreateTokenCommand(mockUser as UserEntity)
       jest.spyOn(jwtService, 'sign').mockReturnValue(mockToken)
-      jest.spyOn(jwtService, 'verify').mockReturnValue({ exp: specificExp })
+      jest.spyOn(jwtService, 'decode').mockReturnValue({ exp: specificExp })
 
       const result = await handler.execute(command)
 
-      expect(result.expiresIn).toEqual(new Date(specificExp * 1000))
+      expect(result.expiresAt).toEqual(new Date(specificExp * 1000))
     })
   })
 })

@@ -8,7 +8,6 @@ export class JwtClaimsDto {
   @ApiProperty()
   email: string
 
-  //TODO: add roles
   @ApiProperty({
     enum: Roles,
     isArray: true,
