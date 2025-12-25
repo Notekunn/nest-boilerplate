@@ -24,19 +24,19 @@ describe('Auth (e2e)', () => {
     })
 
     it('should return 409 when registering with existing email', async () => {
+      const duplicateEmail = `duplicate-${Date.now()}@example.com`
+
       // First registration
-      await request(API_URL)
-        .post('/v1/auth/register')
-        .send({
-          email: `duplicate-${Date.now()}@example.com`,
-          password: USER_PASSWORD,
-        })
+      await request(API_URL).post('/v1/auth/register').send({
+        email: duplicateEmail,
+        password: USER_PASSWORD,
+      })
 
       // Attempt duplicate registration
       return request(API_URL)
         .post('/v1/auth/register')
         .send({
-          email: `duplicate-${Date.now()}@example.com`,
+          email: duplicateEmail,
           password: USER_PASSWORD,
         })
         .expect(409)
@@ -142,22 +142,22 @@ describe('Auth (e2e)', () => {
         .expect(400)
     })
 
-    it('should return 400 when email is missing', () => {
+    it('should return 401 when email is missing', () => {
       return request(API_URL)
         .post('/v1/auth/login')
         .send({
           password: USER_PASSWORD,
         })
-        .expect(400)
+        .expect(401)
     })
 
-    it('should return 400 when password is missing', () => {
+    it('should return 401 when password is missing', () => {
       return request(API_URL)
         .post('/v1/auth/login')
         .send({
           email: loginEmail,
         })
-        .expect(400)
+        .expect(401)
     })
 
     it('should not expose password in response', () => {

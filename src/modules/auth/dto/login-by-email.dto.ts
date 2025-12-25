@@ -1,5 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger'
-import { IsEmail, IsString } from 'class-validator'
+import { IsEmail, IsString, MaxLength } from 'class-validator'
 
 export class LoginByEmailDto {
   @IsString()
@@ -8,6 +8,7 @@ export class LoginByEmailDto {
   email: string
 
   @IsString()
-  @ApiProperty()
+  @MaxLength(128, { message: 'Password must not exceed 128 characters' })
+  @ApiProperty({ maxLength: 128 })
   password: string
 }

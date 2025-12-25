@@ -1,5 +1,5 @@
 import { GetUserByIdQuery } from '@modules/users/cqrs/queries/impl/get-user-by-id.query'
-import { Injectable } from '@nestjs/common'
+import { Injectable, UnauthorizedException } from '@nestjs/common'
 import { ConfigService } from '@nestjs/config'
 import { QueryBus } from '@nestjs/cqrs'
 import { PassportStrategy } from '@nestjs/passport'
@@ -19,8 +19,13 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
     })
   }
 
-  async validate({ id: userId }): Promise<JwtClaimsDto> {
+  async validate({ id: userId }: { id: number }): Promise<JwtClaimsDto> {
     const user = await this.queryBus.execute(new GetUserByIdQuery(userId))
+
+    if (!user) {
+      throw new UnauthorizedException()
+    }
+
     return { ...user, roles: [user.role] }
   }
 }
