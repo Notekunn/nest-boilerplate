@@ -12,14 +12,16 @@ describe('LoginByEmailCommandHandler', () => {
   let handler: LoginByEmailCommandHandler
   let queryBus: QueryBus
 
-  const mockUser: Partial<UserEntity> = {
-    id: 1,
-    email: 'test@example.com',
-    password: generateHash('password123'),
-    name: 'Test User',
-  }
+  let mockUser: Partial<UserEntity>
 
   beforeEach(async () => {
+    mockUser = {
+      id: 1,
+      email: 'test@example.com',
+      password: await generateHash('password123'),
+      name: 'Test User',
+    }
+
     const module: TestingModule = await Test.createTestingModule({
       providers: [
         LoginByEmailCommandHandler,
@@ -69,7 +71,7 @@ describe('LoginByEmailCommandHandler', () => {
 
     it('should validate password hash correctly', async () => {
       const plainPassword = 'correctPassword123'
-      const hashedPassword = generateHash(plainPassword)
+      const hashedPassword = await generateHash(plainPassword)
       const userWithHashedPassword = {
         ...mockUser,
         password: hashedPassword,
