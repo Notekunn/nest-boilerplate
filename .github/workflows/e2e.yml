@@ -3,10 +3,10 @@ name: e2e testing
 on:
   push:
     branches:
-      - '**'
-      - '!main'
+      - "**"
+      - "!main"
     paths:
-      - 'src/*'
+      - "src/*"
       - package.json
 
 concurrency:
@@ -17,6 +17,11 @@ permissions:
   contents: read
   pull-requests: write
 
+env:
+  TEST_ADMIN_EMAIL: admin@gmail.com
+  TEST_ADMIN_PASSWORD: Abcd123456!
+  TEST_USER_EMAIL: user@gmail.com
+  TEST_USER_PASSWORD: Abcd12345!
 jobs:
   check:
     name: Run test
@@ -43,9 +48,25 @@ jobs:
           token: ${{ github.token }}
       - uses: actions/setup-node@v3
         with:
-          node-version: '22'
+          node-version: "22"
       - name: Install package
         run: corepack enable && pnpm install
+      - name: Wait for Postgres
+        run: |
+          until pg_isready -h localhost -p ${{ job.services.postgres.ports['5432'] }} -U postgres; do
+            echo "Waiting for Postgres..."
+            sleep 2
+          done
+      - name: Run migrations and seed
+        run: |
+          pnpm migration:run
+          pnpm seed:run
+        env:
+          DB_HOST: localhost
+          DB_PORT: ${{ job.services.postgres.ports['5432'] }}
+          DB_USERNAME: postgres
+          DB_PASSWORD: postgres
+          DB_NAME: postgres
       - name: Run API in background
         run: |
           pnpm build
@@ -59,8 +80,8 @@ jobs:
           DB_USERNAME: postgres
           DB_PASSWORD: postgres
           DB_NAME: postgres
-          DB_AUTO_RUN_MIGRATIONS: 'false'
-          DB_AUTO_SYNC: 'true'
+          DB_AUTO_RUN_MIGRATIONS: "false"
+          DB_AUTO_SYNC: "true"
           JWT_SECRET_KEY: top_secret
           JWT_EXPIRATION_TIME: 7d
       - name: Healthcheck API
