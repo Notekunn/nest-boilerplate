@@ -95,7 +95,6 @@ jobs:
       - name: Run test
         run: pnpm test:e2e
         env:
-          API_URL: http://localhost:3000
           TEST_API_URL: http://localhost:3000
           TEST_ADMIN_EMAIL: ${{ env.TEST_ADMIN_EMAIL }}
           TEST_ADMIN_PASSWORD: ${{ env.TEST_ADMIN_PASSWORD }}
