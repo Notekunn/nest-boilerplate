@@ -1,5 +1,27 @@
 # Nest boilerplate changelog
 
+# [1.16.0](https://github.com/Notekunn/nest-boilerplate/compare/v1.15.2...v1.16.0) (2025-12-26)
+
+
+### Bug Fixes
+
+* **e2e:** disable auto sync ([ec454be](https://github.com/Notekunn/nest-boilerplate/commit/ec454be88686de3c642f4cbfa830f5da85031847))
+* **e2e:** filter path trigger e2e ([82e6ea6](https://github.com/Notekunn/nest-boilerplate/commit/82e6ea608522b6489efe92c001292e2b796e8f2d))
+* migration ci cd ([c88d00f](https://github.com/Notekunn/nest-boilerplate/commit/c88d00f6593e2a79a36569b4b30da111fb8a68bf))
+* migration ci cd ([bdb4697](https://github.com/Notekunn/nest-boilerplate/commit/bdb46977fe75a52ffb92c7c0667f107530487cf6))
+* migration ci cd ([37c3a29](https://github.com/Notekunn/nest-boilerplate/commit/37c3a293a39901463e3adde1a7ee5255fcf7ce4b))
+* no need wait database ([c39ef81](https://github.com/Notekunn/nest-boilerplate/commit/c39ef81db23b7c08cb71c3400b0e1e1670e888c6))
+* path ([9182101](https://github.com/Notekunn/nest-boilerplate/commit/91821011d5384503199a13f53d79a9451f64db75))
+* test api url ([73fdccf](https://github.com/Notekunn/nest-boilerplate/commit/73fdccf79fce2fdcda01b772343e807cf72eda39))
+* update typeorm command to include tsconfig-paths/register ([47db1e2](https://github.com/Notekunn/nest-boilerplate/commit/47db1e2da3a9e7673ddfa5da0f0c7c88a455678f))
+
+
+### Features
+
+* **seeds:** add npm scripts and update E2E tests for seeded admin ([f266fa2](https://github.com/Notekunn/nest-boilerplate/commit/f266fa2a9ab32d1286f178696a01ed152ab6e6d4))
+* **seeds:** add seed infrastructure with BaseSeeder and runner ([12fbdbe](https://github.com/Notekunn/nest-boilerplate/commit/12fbdbe5eded87cb80cbbfb7279a2418829351a2))
+* **seeds:** implement AdminUserSeeder with idempotent logic ([45f5508](https://github.com/Notekunn/nest-boilerplate/commit/45f55081b3070c607fccf52d6046ac49b03172d4))
+
 ## [1.15.2](https://github.com/Notekunn/nest-boilerplate/compare/v1.15.1...v1.15.2) (2025-12-26)
 
 
