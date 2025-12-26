@@ -80,7 +80,7 @@ jobs:
           DB_PASSWORD: postgres
           DB_NAME: postgres
           DB_AUTO_RUN_MIGRATIONS: "false"
-          DB_AUTO_SYNC: "true"
+          DB_AUTO_SYNC: "false"
           JWT_SECRET_KEY: top_secret
           JWT_EXPIRATION_TIME: 7d
       - name: Healthcheck API
