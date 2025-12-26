@@ -1,4 +1,5 @@
 import { Roles } from '@common/enum/role.enum'
+import { AuthenticatedRequest } from '@common/interfaces/authenticated-request.interface'
 import { LocalAuthGuard } from '@guards/local-auth.guard'
 import { TokenResponseDto } from '@modules/auth/dto/token-response.dto'
 import { UserEntity } from '@modules/users/entities/user.entity'
@@ -10,20 +11,38 @@ import { RegisterByEmailCommand } from '../cqrs/commands/impl/register-by-email.
 import { RegisterByEmailDto } from '../dto/register-by-email.dto'
 import { AuthController } from './auth.controller'
 
-describe('AuthController', () => {
-  let controller: AuthController
-  let commandBus: CommandBus
-
-  const mockUser: Partial<UserEntity> = {
+/**
+ * Creates a mock user for testing with proper UserEntity type
+ */
+function createMockUser(overrides: Partial<UserEntity> = {}): UserEntity {
+  return {
     id: 1,
     email: 'test@example.com',
     name: 'Test User',
     role: Roles.User,
-  }
+    password: 'hashedPassword',
+    createdAt: new Date(),
+    updatedAt: new Date(),
+    ...overrides,
+  } as UserEntity
+}
+
+/**
+ * Creates a mock authenticated request
+ */
+function createMockRequest(user: UserEntity): AuthenticatedRequest {
+  return { user }
+}
+
+describe('AuthController', () => {
+  let controller: AuthController
+  let commandBus: CommandBus
+
+  const mockUser = createMockUser()
 
   const mockToken: TokenResponseDto = {
     token: 'mock.jwt.token',
-    expiresIn: new Date(Date.now() + 3600000),
+    expiresAt: new Date(Date.now() + 3600000),
   }
 
   beforeEach(async () => {
@@ -52,9 +71,7 @@ describe('AuthController', () => {
 
   describe('login', () => {
     it('should return user and token on successful login', async () => {
-      const mockRequest = {
-        user: mockUser,
-      }
+      const mockRequest = createMockRequest(mockUser)
       jest.spyOn(commandBus, 'execute').mockResolvedValue(mockToken)
 
       const result = await controller.login(mockRequest)
@@ -67,9 +84,7 @@ describe('AuthController', () => {
     })
 
     it('should create token with user from request', async () => {
-      const mockRequest = {
-        user: mockUser,
-      }
+      const mockRequest = createMockRequest(mockUser)
       jest.spyOn(commandBus, 'execute').mockResolvedValue(mockToken)
 
       await controller.login(mockRequest)
@@ -80,14 +95,12 @@ describe('AuthController', () => {
     })
 
     it('should handle admin user login', async () => {
-      const adminUser: Partial<UserEntity> = {
+      const adminUser = createMockUser({
         id: 2,
         email: 'admin@example.com',
         role: Roles.Admin,
-      }
-      const mockRequest = {
-        user: adminUser,
-      }
+      })
+      const mockRequest = createMockRequest(adminUser)
       jest.spyOn(commandBus, 'execute').mockResolvedValue(mockToken)
 
       const result = await controller.login(mockRequest)
@@ -120,7 +133,7 @@ describe('AuthController', () => {
         email: 'newuser@example.com',
         password: 'password123',
       }
-      const executeCalls: any[] = []
+      const executeCalls: unknown[] = []
       jest.spyOn(commandBus, 'execute').mockImplementation((command) => {
         executeCalls.push(command)
         if (command instanceof RegisterByEmailCommand) {
@@ -141,11 +154,10 @@ describe('AuthController', () => {
         email: 'newuser@example.com',
         password: 'password123',
       }
-      const registeredUser: Partial<UserEntity> = {
+      const registeredUser = createMockUser({
         id: 3,
         email: dto.email,
-        role: Roles.User,
-      }
+      })
       jest.spyOn(commandBus, 'execute').mockResolvedValueOnce(registeredUser).mockResolvedValueOnce(mockToken)
 
       const result = await controller.register(dto)
