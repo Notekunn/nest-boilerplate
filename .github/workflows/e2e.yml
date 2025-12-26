@@ -1,13 +1,15 @@
-name: e2e testing
+name: 🧪 E2E Testing
 
 on:
   push:
     branches:
-      - '**'
-      - '!main'
+      - "**"
+      - "!main"
     paths:
-      - 'src/*'
+      - src/*
+      - test/*
       - package.json
+      - .github/workflows/e2e.yml
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -17,6 +19,11 @@ permissions:
   contents: read
   pull-requests: write
 
+env:
+  TEST_ADMIN_EMAIL: admin@gmail.com
+  TEST_ADMIN_PASSWORD: Abcd123456!
+  TEST_USER_EMAIL: user@gmail.com
+  TEST_USER_PASSWORD: Abcd12345!
 jobs:
   check:
     name: Run test
@@ -43,9 +50,24 @@ jobs:
           token: ${{ github.token }}
       - uses: actions/setup-node@v3
         with:
-          node-version: '22'
+          node-version: "22"
       - name: Install package
         run: corepack enable && pnpm install
+      - name: Run migrations and seed
+        run: |
+          pnpm migration:run
+          pnpm seed:run
+        env:
+          DB_HOST: localhost
+          DB_PORT: ${{ job.services.postgres.ports['5432'] }}
+          DB_USERNAME: postgres
+          DB_PASSWORD: postgres
+          DB_NAME: postgres
+          TEST_API_URL: http://localhost:3000
+          TEST_ADMIN_EMAIL: ${{ env.TEST_ADMIN_EMAIL }}
+          TEST_ADMIN_PASSWORD: ${{ env.TEST_ADMIN_PASSWORD }}
+          TEST_USER_EMAIL: ${{ env.TEST_USER_EMAIL }}
+          TEST_USER_PASSWORD: ${{ env.TEST_USER_PASSWORD }}
       - name: Run API in background
         run: |
           pnpm build
@@ -59,8 +81,8 @@ jobs:
           DB_USERNAME: postgres
           DB_PASSWORD: postgres
           DB_NAME: postgres
-          DB_AUTO_RUN_MIGRATIONS: 'false'
-          DB_AUTO_SYNC: 'true'
+          DB_AUTO_RUN_MIGRATIONS: "false"
+          DB_AUTO_SYNC: "false"
           JWT_SECRET_KEY: top_secret
           JWT_EXPIRATION_TIME: 7d
       - name: Healthcheck API
@@ -73,9 +95,11 @@ jobs:
       - name: Run test
         run: pnpm test:e2e
         env:
-          API_URL: http://localhost:3000
-          USER_EMAIL: user@test.com
-          USER_PASSWORD: Abcd12345-
+          TEST_API_URL: http://localhost:3000
+          TEST_ADMIN_EMAIL: ${{ env.TEST_ADMIN_EMAIL }}
+          TEST_ADMIN_PASSWORD: ${{ env.TEST_ADMIN_PASSWORD }}
+          TEST_USER_EMAIL: ${{ env.TEST_USER_EMAIL }}
+          TEST_USER_PASSWORD: ${{ env.TEST_USER_PASSWORD }}
       - name: Show Log
         if: failure()
         run: cat .log

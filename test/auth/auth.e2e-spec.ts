@@ -1,16 +1,16 @@
 import request from 'supertest'
 
 describe('Auth (e2e)', () => {
-  const { API_URL, USER_PASSWORD } = process.env
+  const { TEST_API_URL, TEST_USER_PASSWORD } = process.env
   const uniqueEmail = `test-${Date.now()}@example.com`
 
   describe('/v1/auth/register (POST)', () => {
     it('should register a new user successfully', () => {
-      return request(API_URL)
+      return request(TEST_API_URL)
         .post('/v1/auth/register')
         .send({
           email: uniqueEmail,
-          password: USER_PASSWORD,
+          password: TEST_USER_PASSWORD,
         })
         .expect(201)
         .expect((res) => {
@@ -19,7 +19,7 @@ describe('Auth (e2e)', () => {
           expect(res.body.user).toHaveProperty('email', uniqueEmail)
           expect(res.body.user).toHaveProperty('id')
           expect(res.body.token).toHaveProperty('token')
-          expect(res.body.token).toHaveProperty('expiresIn')
+          expect(res.body.token).toHaveProperty('expiresAt')
         })
     })
 
@@ -27,42 +27,42 @@ describe('Auth (e2e)', () => {
       const duplicateEmail = `duplicate-${Date.now()}@example.com`
 
       // First registration
-      await request(API_URL).post('/v1/auth/register').send({
+      await request(TEST_API_URL).post('/v1/auth/register').send({
         email: duplicateEmail,
-        password: USER_PASSWORD,
+        password: TEST_USER_PASSWORD,
       })
 
       // Attempt duplicate registration
-      return request(API_URL)
+      return request(TEST_API_URL)
         .post('/v1/auth/register')
         .send({
           email: duplicateEmail,
-          password: USER_PASSWORD,
+          password: TEST_USER_PASSWORD,
         })
         .expect(409)
     })
 
     it('should return 400 for invalid email format', () => {
-      return request(API_URL)
+      return request(TEST_API_URL)
         .post('/v1/auth/register')
         .send({
           email: 'invalid-email',
-          password: USER_PASSWORD,
+          password: TEST_USER_PASSWORD,
         })
         .expect(400)
     })
 
     it('should return 400 when email is missing', () => {
-      return request(API_URL)
+      return request(TEST_API_URL)
         .post('/v1/auth/register')
         .send({
-          password: USER_PASSWORD,
+          password: TEST_USER_PASSWORD,
         })
         .expect(400)
     })
 
     it('should return 400 when password is missing', () => {
-      return request(API_URL)
+      return request(TEST_API_URL)
         .post('/v1/auth/register')
         .send({
           email: uniqueEmail,
@@ -71,11 +71,11 @@ describe('Auth (e2e)', () => {
     })
 
     it('should not expose password in response', () => {
-      return request(API_URL)
+      return request(TEST_API_URL)
         .post('/v1/auth/register')
         .send({
           email: `no-password-${Date.now()}@example.com`,
-          password: USER_PASSWORD,
+          password: TEST_USER_PASSWORD,
         })
         .expect(201)
         .expect((res) => {
@@ -89,18 +89,18 @@ describe('Auth (e2e)', () => {
 
     beforeAll(async () => {
       // Create user for login tests
-      await request(API_URL).post('/v1/auth/register').send({
+      await request(TEST_API_URL).post('/v1/auth/register').send({
         email: loginEmail,
-        password: USER_PASSWORD,
+        password: TEST_USER_PASSWORD,
       })
     })
 
     it('should login successfully with correct credentials', () => {
-      return request(API_URL)
+      return request(TEST_API_URL)
         .post('/v1/auth/login')
         .send({
           email: loginEmail,
-          password: USER_PASSWORD,
+          password: TEST_USER_PASSWORD,
         })
         .expect(200)
         .expect((res) => {
@@ -113,7 +113,7 @@ describe('Auth (e2e)', () => {
     })
 
     it('should return 400 for incorrect password', () => {
-      return request(API_URL)
+      return request(TEST_API_URL)
         .post('/v1/auth/login')
         .send({
           email: loginEmail,
@@ -123,36 +123,36 @@ describe('Auth (e2e)', () => {
     })
 
     it('should return 400 for non-existent user', () => {
-      return request(API_URL)
+      return request(TEST_API_URL)
         .post('/v1/auth/login')
         .send({
           email: 'nonexistent@example.com',
-          password: USER_PASSWORD,
+          password: TEST_USER_PASSWORD,
         })
         .expect(400)
     })
 
     it('should return 400 for invalid email format', () => {
-      return request(API_URL)
+      return request(TEST_API_URL)
         .post('/v1/auth/login')
         .send({
           email: 'invalid-email',
-          password: USER_PASSWORD,
+          password: TEST_USER_PASSWORD,
         })
         .expect(400)
     })
 
     it('should return 401 when email is missing', () => {
-      return request(API_URL)
+      return request(TEST_API_URL)
         .post('/v1/auth/login')
         .send({
-          password: USER_PASSWORD,
+          password: TEST_USER_PASSWORD,
         })
         .expect(401)
     })
 
     it('should return 401 when password is missing', () => {
-      return request(API_URL)
+      return request(TEST_API_URL)
         .post('/v1/auth/login')
         .send({
           email: loginEmail,
@@ -161,11 +161,11 @@ describe('Auth (e2e)', () => {
     })
 
     it('should not expose password in response', () => {
-      return request(API_URL)
+      return request(TEST_API_URL)
         .post('/v1/auth/login')
         .send({
           email: loginEmail,
-          password: USER_PASSWORD,
+          password: TEST_USER_PASSWORD,
         })
         .expect(200)
         .expect((res) => {
@@ -174,11 +174,11 @@ describe('Auth (e2e)', () => {
     })
 
     it('should return valid JWT token structure', () => {
-      return request(API_URL)
+      return request(TEST_API_URL)
         .post('/v1/auth/login')
         .send({
           email: loginEmail,
-          password: USER_PASSWORD,
+          password: TEST_USER_PASSWORD,
         })
         .expect(200)
         .expect((res) => {

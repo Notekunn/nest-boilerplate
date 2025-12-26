@@ -31,3 +31,9 @@ password: string
 - **DTOs**: Use `class-validator` for input validation.
 - **Swagger**: Use `@ApiProperty` with validation constraints (minLength, maxLength) to sync docs with implementation.
 - **Casing**: Use `camelCase` for properties and `PascalCase` for classes.
+- **Seeding**:
+  - Extend `BaseSeeder` for all new seeders.
+  - Implement the `run` method.
+  - Seeders should be idempotent or handle existing data gracefully.
+  - CLI usage: `pnpm seed` or `pnpm seed --only <seeder-name>`.
+  - **Safety**: Seeding is blocked in production environments by default.

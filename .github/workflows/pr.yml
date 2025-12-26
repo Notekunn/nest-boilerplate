@@ -1,4 +1,4 @@
-name: Validate PR
+name: ✅ PR Check
 
 on:
   pull_request_target:

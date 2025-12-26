@@ -22,7 +22,7 @@
     "start:debug": "nest start --debug --watch",
     "start:ci": "nest start",
     "start:prod": "node dist/main",
-    "typeorm": "node --require ts-node/register ./node_modules/typeorm/cli.js -d ./src/ormconfig.ts",
+    "typeorm": "node --require ts-node/register --require tsconfig-paths/register ./node_modules/typeorm/cli.js -d ./src/ormconfig.ts",
     "migration:generate": "f() { pnpm build && pnpm typeorm migration:generate -p \"./src/databases/migrations/$@\"; }; f",
     "migration:run": "pnpm build && pnpm typeorm migration:run",
     "migration:revert": "pnpm typeorm migration:revert",
@@ -31,7 +31,11 @@
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
-    "test:e2e": "jest --config ./test/jest-e2e.config.js --forceExit"
+    "test:e2e": "jest --config ./test/jest-e2e.config.js --forceExit",
+    "test:e2e:seeded": "pnpm seed:run && pnpm test:e2e",
+    "seed": "ts-node -r tsconfig-paths/register src/databases/seeds/seed-runner.ts",
+    "seed:run": "ts-node -r tsconfig-paths/register src/databases/seeds/seed-runner.ts",
+    "seed:admin": "ts-node -r tsconfig-paths/register src/databases/seeds/seed-runner.ts --only=admin"
   },
   "dependencies": {
     "@casl/ability": "^6.7.5",
