@@ -1,5 +1,20 @@
 # Nest boilerplate changelog
 
+## [1.15.1](https://github.com/Notekunn/nest-boilerplate/compare/v1.15.0...v1.15.1) (2025-12-26)
+
+
+### Bug Fixes
+
+* **auth:** add password validation and JWT null check ([08453f0](https://github.com/Notekunn/nest-boilerplate/commit/08453f0965e04d9bcccd1d3e5b3d00e10523a0f8))
+* **auth:** correct CQRS base class and add type safety ([62a76f9](https://github.com/Notekunn/nest-boilerplate/commit/62a76f9cd6e5a0d2aa28bd2b2c788a0e8a7cef87))
+* **auth:** enhance security and type safety in authentication modules ([cb412f8](https://github.com/Notekunn/nest-boilerplate/commit/cb412f86ac713bce588ec4592fe744019df4edac))
+
+
+### Performance Improvements
+
+* **auth:** migrate bcrypt from sync to async hashing ([dfb6fe0](https://github.com/Notekunn/nest-boilerplate/commit/dfb6fe0b78fb495a9a87b13cb10fa936bed0a0ca))
+* **auth:** migrate bcrypt from sync to async hashing ([7d78fa1](https://github.com/Notekunn/nest-boilerplate/commit/7d78fa1801c0ad125482a424cb7116073ac05244))
+
 # [1.15.0](https://github.com/Notekunn/nest-boilerplate/compare/v1.14.24...v1.15.0) (2025-11-19)
 
 
