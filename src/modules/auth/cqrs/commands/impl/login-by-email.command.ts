@@ -1,7 +1,7 @@
 import { UserEntity } from '@modules/users/entities/user.entity'
-import { Query } from '@nestjs-architects/typed-cqrs'
+import { Command } from '@nestjs-architects/typed-cqrs'
 
-export class LoginByEmailCommand extends Query<UserEntity> {
+export class LoginByEmailCommand extends Command<UserEntity> {
   constructor(
     public readonly email: string,
     public readonly password: string,

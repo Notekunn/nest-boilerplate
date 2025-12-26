@@ -1,22 +1,23 @@
 import * as bcrypt from 'bcryptjs'
 
+/** Default number of salt rounds for bcrypt hashing */
+const DEFAULT_SALT_ROUNDS = 10
+
 /**
- * generate hash from password or string
- * @param {string} password
- * @returns {string}
+ * Generate hash from password asynchronously
+ * @param password - Plain text password
+ * @param saltRounds - Number of salt rounds (default: 10)
+ * @returns Promise resolving to hashed password
  */
-export function generateHash(password: string, salt?: string): string {
-  if (salt) {
-    return bcrypt.hashSync(password, salt)
-  }
-  return bcrypt.hashSync(password, 10)
+export async function generateHash(password: string, saltRounds: number = DEFAULT_SALT_ROUNDS): Promise<string> {
+  return bcrypt.hash(password, saltRounds)
 }
 
 /**
- * validate text with hash
- * @param {string} password
- * @param {string} hash
- * @returns {Promise<boolean>}
+ * Validate text with hash
+ * @param password - Plain text password
+ * @param hash - Hashed password to compare against
+ * @returns Promise resolving to true if match
  */
 export function validateHash(password: string, hash: string): Promise<boolean> {
   return bcrypt.compare(password, hash || '')

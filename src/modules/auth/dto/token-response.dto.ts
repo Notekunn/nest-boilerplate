@@ -1,11 +1,11 @@
 import { ApiProperty } from '@nestjs/swagger'
 
 export class TokenResponseDto {
-  @ApiProperty()
+  @ApiProperty({ description: 'JWT access token' })
   token: string
 
-  @ApiProperty()
-  expiresIn: Date
+  @ApiProperty({ description: 'Token expiration timestamp' })
+  expiresAt: Date
 
   constructor(partial: Partial<TokenResponseDto>) {
     Object.assign(this, partial)

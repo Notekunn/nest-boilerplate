@@ -71,8 +71,8 @@ describe('User (e2e)', () => {
 
     it('should update user password successfully', async () => {
       const tempUserEmail = `temp-${Date.now()}@example.com`
-      const oldPassword = 'oldPassword123'
-      const newPassword = 'newPassword456'
+      const oldPassword = 'OldPass123!'
+      const newPassword = 'NewPass456!'
 
       // Create temp user
       const registerRes = await request(API_URL).post('/v1/auth/register').send({
@@ -116,7 +116,7 @@ describe('User (e2e)', () => {
         .set('Authorization', `Bearer ${userToken}`)
         .send({
           name: newName,
-          password: 'newpassword123',
+          password: 'NewPass123!',
         })
         .expect(201)
         .expect((res) => {
@@ -143,7 +143,7 @@ describe('User (e2e)', () => {
         .post('/v1/user/profile')
         .set('Authorization', `Bearer ${userToken}`)
         .send({
-          password: 'newSecretPassword',
+          password: 'NewSecret123!',
         })
         .expect(201)
         .expect((res) => {

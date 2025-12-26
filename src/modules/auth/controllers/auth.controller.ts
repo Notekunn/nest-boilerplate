@@ -1,3 +1,4 @@
+import { AuthenticatedRequest } from '@common/interfaces/authenticated-request.interface'
 import { LocalAuthGuard } from '@guards/local-auth.guard'
 import { Body, Controller, HttpCode, Post, Request, UseGuards } from '@nestjs/common'
 import { CommandBus } from '@nestjs/cqrs'
@@ -22,7 +23,7 @@ export class AuthController {
   })
   @HttpCode(200)
   @Post('login')
-  async login(@Request() req) {
+  async login(@Request() req: AuthenticatedRequest) {
     const user = req.user
     const token = await this.commandBus.execute(new CreateTokenCommand(user))
 
