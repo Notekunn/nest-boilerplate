@@ -14,7 +14,7 @@ export const typeormConfiguration = registerAs<TypeOrmModuleOptions>('orm', () =
     namingStrategy: new SnakeNamingStrategy(),
     migrationsTableName: '__migrations',
     entities: ['dist/modules/**/*.entity.js'],
-    migrations: ['dist/databases/{migrations,seeds}/*.js'],
+    migrations: ['dist/databases/migrations/*.js'],
     migrationsRun: process.env.DB_AUTO_RUN_MIGRATIONS === 'true',
     synchronize: process.env.DB_AUTO_SYNC === 'true' && process.env.NODE_ENV !== 'production',
     logging: process.env.DB_LOGGING === 'true',

@@ -26,3 +26,9 @@ graph TD
 - **Secrets**: Managed via `ConfigService` and environment variables.
 - **Payload**: JWT contains minimal data (`id`, `email`). Roles are hydrated during validation.
 - **Password Hashing**: Done before storage (Argon2 or similar via shared utils).
+
+## Database Seeding
+The seeding infrastructure provides a way to populate the database with initial or mock data.
+- **BaseSeeder**: Abstract class providing access to `DataSource`.
+- **SeedRunner**: CLI utility that discovery and executes seeders.
+- **Production Guard**: Prevents accidental data seeding in production.

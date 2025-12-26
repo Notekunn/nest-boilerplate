@@ -17,7 +17,7 @@ This is a production-ready NestJS boilerplate using Fastify, TypeORM, and Postgr
 - `users`: User management including profile updates
 - `common`: Global constants, DTOs, and entities
 - `configurations`: Environment-based configuration management
-- `databases`: Database migrations and ORM setup
+- `databases`: Database migrations, ORM setup, and seed infrastructure
 
 ## Development Standards
 - **Commits**: Conventional Commits enforced via CommitLint
@@ -28,3 +28,4 @@ This is a production-ready NestJS boilerplate using Fastify, TypeORM, and Postgr
 ## Security (Phase 1 Fixes)
 - **Password Validation**: Enforced 8-128 characters with complexity (uppercase, lowercase, digits, special characters)
 - **JWT Integrity**: Validate user existence in `JwtStrategy` to prevent stale tokens for deleted users
+- **Seed Infrastructure**: CLI-based seeding with production guards and single-seeder execution support
