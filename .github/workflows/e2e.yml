@@ -7,7 +7,7 @@ on:
       - "!main"
     paths:
       - src/*
-      - tests/*
+      - test/*
       - package.json
       - .github/workflows/e2e.yml
 
