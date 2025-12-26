@@ -5,9 +5,11 @@ on:
     branches:
       - "**"
       - "!main"
-    # paths:
-    #   - "src/*"
-    #   - package.json
+    paths:
+      - src/*
+      - tests/*
+      - package.json
+      - .github/workflows/e2e.yml
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
