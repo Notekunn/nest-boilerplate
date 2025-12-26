@@ -7,7 +7,7 @@ import { BaseSeeder } from '../base.seeder'
 
 /**
  * Seeds admin user for E2E testing.
- * Reads credentials from ADMIN_EMAIL and ADMIN_PASSWORD env vars.
+ * Reads credentials from TEST_ADMIN_EMAIL and TEST_ADMIN_PASSWORD env vars.
  * Idempotent: skips if admin already exists.
  */
 export class AdminUserSeeder extends BaseSeeder {
@@ -15,12 +15,12 @@ export class AdminUserSeeder extends BaseSeeder {
   readonly description = 'Create admin user for E2E testing'
 
   async run(dataSource: DataSource): Promise<void> {
-    const email = process.env.ADMIN_EMAIL
-    const password = process.env.ADMIN_PASSWORD
+    const email = process.env.TEST_ADMIN_EMAIL
+    const password = process.env.TEST_ADMIN_PASSWORD
 
     // Validate env vars
     if (!email || !password) {
-      console.log('  SKIP: ADMIN_EMAIL or ADMIN_PASSWORD not set')
+      console.log('  SKIP: TEST_ADMIN_EMAIL or TEST_ADMIN_PASSWORD not set')
       return
     }
 

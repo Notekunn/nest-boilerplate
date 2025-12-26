@@ -32,7 +32,10 @@
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.config.js --forceExit",
-    "seed": "ts-node -r tsconfig-paths/register src/databases/seeds/seed-runner.ts"
+    "test:e2e:seeded": "pnpm seed:run && pnpm test:e2e",
+    "seed": "ts-node -r tsconfig-paths/register src/databases/seeds/seed-runner.ts",
+    "seed:run": "ts-node -r tsconfig-paths/register src/databases/seeds/seed-runner.ts",
+    "seed:admin": "ts-node -r tsconfig-paths/register src/databases/seeds/seed-runner.ts --only=admin"
   },
   "dependencies": {
     "@casl/ability": "^6.7.5",

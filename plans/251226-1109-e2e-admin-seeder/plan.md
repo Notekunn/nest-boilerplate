@@ -2,7 +2,7 @@
 
 **Date**: 2025-12-26
 **Branch**: feat/init-seed
-**Status**: Phase 2 DONE (2025-12-26)
+**Status**: ✅ ALL PHASES DONE (2025-12-26)
 
 ## Overview
 
@@ -34,7 +34,7 @@ src/databases/seeds/
 |-------|------|-------------|--------|
 | 1 | [phase-01-seed-infrastructure.md](./phase-01-seed-infrastructure.md) | Core infrastructure (DataSource, BaseSeeder, runner) | ✅ DONE |
 | 2 | [phase-02-admin-seeder.md](./phase-02-admin-seeder.md) | Admin user seeder implementation | ✅ DONE |
-| 3 | [phase-03-npm-scripts-env.md](./phase-03-npm-scripts-env.md) | npm scripts + env vars + docs | Planned |
+| 3 | [phase-03-npm-scripts-env.md](./phase-03-npm-scripts-env.md) | npm scripts + env vars + docs | ✅ DONE |
 
 ## Dependencies
 
@@ -44,11 +44,11 @@ src/databases/seeds/
 ## Success Criteria
 
 - [x] `pnpm seed` executes all seeders
-- [ ] `pnpm seed:admin` runs only admin seeder
+- [x] `pnpm seed:admin` runs only admin seeder
 - [x] Admin user created with `Roles.Admin`
 - [x] Seeder skips if admin exists
 - [x] Blocks in production environment
-- [ ] E2E tests can login as admin
+- [x] E2E tests can login as admin
 
 ## Files to Create
 
@@ -59,7 +59,7 @@ src/databases/seeds/
 ## Files to Modify
 
 1. `package.json` - add seed scripts
-2. `.env.example` - add `ADMIN_EMAIL`, `ADMIN_PASSWORD`
+2. `.env.example` - add `TEST_ADMIN_EMAIL`, `TEST_ADMIN_PASSWORD`
 
 ## Validation Summary
 
