@@ -1,5 +1,14 @@
 # Nest boilerplate changelog
 
+## [1.15.2](https://github.com/Notekunn/nest-boilerplate/compare/v1.15.1...v1.15.2) (2025-12-26)
+
+
+### Bug Fixes
+
+* add 'ms' dependency and update JWT expiration type ([d98bc83](https://github.com/Notekunn/nest-boilerplate/commit/d98bc837c573afd6071655cfc6f1399b647ca276))
+* migration ([3fd27b0](https://github.com/Notekunn/nest-boilerplate/commit/3fd27b0276af69c11618cb891172b5f4df988af9))
+* update dependency ([fb13008](https://github.com/Notekunn/nest-boilerplate/commit/fb130084353689f38827c16e1ee0be42deeb1705))
+
 ## [1.15.1](https://github.com/Notekunn/nest-boilerplate/compare/v1.15.0...v1.15.1) (2025-12-26)
 
 
