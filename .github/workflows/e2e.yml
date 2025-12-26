@@ -51,12 +51,6 @@ jobs:
           node-version: "22"
       - name: Install package
         run: corepack enable && pnpm install
-      - name: Wait for Postgres
-        run: |
-          until pg_isready -h localhost -p ${{ job.services.postgres.ports['5432'] }} -U postgres; do
-            echo "Waiting for Postgres..."
-            sleep 2
-          done
       - name: Run migrations and seed
         run: |
           pnpm migration:run
