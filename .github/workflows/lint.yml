@@ -1,4 +1,4 @@
-name: Validate Linter
+name: 🔍 Lint
 
 on:
   push:
