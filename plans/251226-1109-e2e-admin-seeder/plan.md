@@ -2,7 +2,7 @@
 
 **Date**: 2025-12-26
 **Branch**: feat/init-seed
-**Status**: Phase 1 DONE (2025-12-26)
+**Status**: Phase 2 DONE (2025-12-26)
 
 ## Overview
 
@@ -33,7 +33,7 @@ src/databases/seeds/
 | Phase | File | Description | Status |
 |-------|------|-------------|--------|
 | 1 | [phase-01-seed-infrastructure.md](./phase-01-seed-infrastructure.md) | Core infrastructure (DataSource, BaseSeeder, runner) | ✅ DONE |
-| 2 | [phase-02-admin-seeder.md](./phase-02-admin-seeder.md) | Admin user seeder implementation | Planned |
+| 2 | [phase-02-admin-seeder.md](./phase-02-admin-seeder.md) | Admin user seeder implementation | ✅ DONE |
 | 3 | [phase-03-npm-scripts-env.md](./phase-03-npm-scripts-env.md) | npm scripts + env vars + docs | Planned |
 
 ## Dependencies
@@ -45,8 +45,8 @@ src/databases/seeds/
 
 - [x] `pnpm seed` executes all seeders
 - [ ] `pnpm seed:admin` runs only admin seeder
-- [ ] Admin user created with `Roles.Admin`
-- [ ] Seeder skips if admin exists
+- [x] Admin user created with `Roles.Admin`
+- [x] Seeder skips if admin exists
 - [x] Blocks in production environment
 - [ ] E2E tests can login as admin
 
