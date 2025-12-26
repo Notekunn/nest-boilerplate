@@ -67,6 +67,11 @@ jobs:
           DB_USERNAME: postgres
           DB_PASSWORD: postgres
           DB_NAME: postgres
+          TEST_API_URL: http://localhost:3000
+          TEST_ADMIN_EMAIL: ${{ env.TEST_ADMIN_EMAIL }}
+          TEST_ADMIN_PASSWORD: ${{ env.TEST_ADMIN_PASSWORD }}
+          TEST_USER_EMAIL: ${{ env.TEST_USER_EMAIL }}
+          TEST_USER_PASSWORD: ${{ env.TEST_USER_PASSWORD }}
       - name: Run API in background
         run: |
           pnpm build
@@ -95,8 +100,11 @@ jobs:
         run: pnpm test:e2e
         env:
           API_URL: http://localhost:3000
-          USER_EMAIL: user@test.com
-          USER_PASSWORD: Abcd12345-
+          TEST_API_URL: http://localhost:3000
+          TEST_ADMIN_EMAIL: ${{ env.TEST_ADMIN_EMAIL }}
+          TEST_ADMIN_PASSWORD: ${{ env.TEST_ADMIN_PASSWORD }}
+          TEST_USER_EMAIL: ${{ env.TEST_USER_EMAIL }}
+          TEST_USER_PASSWORD: ${{ env.TEST_USER_PASSWORD }}
       - name: Show Log
         if: failure()
         run: cat .log
