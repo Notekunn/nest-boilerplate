@@ -5,9 +5,9 @@ on:
     branches:
       - "**"
       - "!main"
-    paths:
-      - "src/*"
-      - package.json
+    # paths:
+    #   - "src/*"
+    #   - package.json
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
