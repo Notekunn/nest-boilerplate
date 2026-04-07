@@ -1,16 +1,18 @@
 ## Nest Boilerplate
 
-Production-ready NestJS boilerplate using Fastify, TypeORM, PostgreSQL, and robust tooling for testing, linting, formatting, and CI/CD. Built with pnpm and Node.js 22+.
+Production-ready NestJS 11 boilerplate with Fastify, TypeORM, PostgreSQL, CQRS, CASL auth, Swagger, Docker, and CI/CD -- clone and ship in minutes.
 
 ### Tech Stack
 
-- **Runtime**: NestJS 11 (Fastify platform), TypeScript 5
-- **Database**: PostgreSQL + TypeORM
-- **Auth**: JWT
-- **Architecture**: CQRS, CASL for authorization
-- **Tooling**: pnpm, ESLint, Prettier, Jest, Husky, CommitLint, Semantic Release
-- **Docs**: Swagger (OpenAPI)
-- **Container**: Docker, Docker Compose
+| Layer            | Stack                                                  |
+| ---------------- | ------------------------------------------------------ |
+| **Runtime**      | NestJS 11 (Fastify), TypeScript 5, Node.js 22+         |
+| **Database**     | PostgreSQL + TypeORM (migrations, seeds)               |
+| **Auth**         | JWT + Passport, CASL role-based authorization          |
+| **Architecture** | CQRS, custom repositories, global validation           |
+| **API Docs**     | Swagger / OpenAPI 3.0 (auto-generated)                 |
+| **Quality**      | ESLint, Prettier, Jest (unit + e2e), Husky, CommitLint |
+| **CI/CD**        | GitHub Actions, Semantic Release, Docker multi-stage   |
 
 ### Prerequisites
 
@@ -33,23 +35,23 @@ cp .env.example .env  # if available, or create .env manually
 
 Configure these in `.env` (values shown are typical defaults):
 
-| Variable | Description | Example |
-| --- | --- | --- |
-| `SERVICE_HOST` | App host | `0.0.0.0` |
-| `SERVICE_PORT` | App port | `3000` |
-| `SERVICE_VERSION` | App version | `1.0.0` |
-| `CORS_ORIGINS` | Comma-separated list of allowed origins | `http://localhost:3000` |
-| `JWT_SECRET_KEY` | JWT signing secret (required) | `super-secret` |
-| `JWT_EXPIRATION_TIME` | JWT expiration | `7d` |
-| `DB_HOST` | DB host (required) | `localhost` |
-| `DB_PORT` | DB port (required) | `5432` |
-| `DB_USERNAME` | DB user (required) | `postgres` |
-| `DB_PASSWORD` | DB password (required) | `postgres` |
-| `DB_NAME` | DB name (required) | `nest_boilerplate` |
-| `DB_AUTO_RUN_MIGRATIONS` | Run migrations on boot | `false` |
-| `DB_AUTO_SYNC` | TypeORM sync (avoid in prod) | `false` |
-| `DB_LOGGING` | Enable query logging | `false` |
-| `DB_SSL` | Enable SSL connection | `false` |
+| Variable                 | Description                             | Example                 |
+| ------------------------ | --------------------------------------- | ----------------------- |
+| `SERVICE_HOST`           | App host                                | `0.0.0.0`               |
+| `SERVICE_PORT`           | App port                                | `3000`                  |
+| `SERVICE_VERSION`        | App version                             | `1.0.0`                 |
+| `CORS_ORIGINS`           | Comma-separated list of allowed origins | `http://localhost:3000` |
+| `JWT_SECRET_KEY`         | JWT signing secret (required)           | `super-secret`          |
+| `JWT_EXPIRATION_TIME`    | JWT expiration                          | `7d`                    |
+| `DB_HOST`                | DB host (required)                      | `localhost`             |
+| `DB_PORT`                | DB port (required)                      | `5432`                  |
+| `DB_USERNAME`            | DB user (required)                      | `postgres`              |
+| `DB_PASSWORD`            | DB password (required)                  | `postgres`              |
+| `DB_NAME`                | DB name (required)                      | `nest_boilerplate`      |
+| `DB_AUTO_RUN_MIGRATIONS` | Run migrations on boot                  | `false`                 |
+| `DB_AUTO_SYNC`           | TypeORM sync (avoid in prod)            | `false`                 |
+| `DB_LOGGING`             | Enable query logging                    | `false`                 |
+| `DB_SSL`                 | Enable SSL connection                   | `false`                 |
 
 ### Run
 
@@ -104,6 +106,7 @@ pnpm migration:create MigrationName
 ```
 
 Notes:
+
 - Migrations are generated into `src/databases/migrations`.
 - CLI is configured via `src/ormconfig.ts`.
 
