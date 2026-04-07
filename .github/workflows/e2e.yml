@@ -10,6 +10,7 @@ on:
       - test/*
       - package.json
       - .github/workflows/e2e.yml
+      - tsconfig*.json
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
