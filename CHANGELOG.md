@@ -1,5 +1,12 @@
 # Nest boilerplate changelog
 
+## [1.17.1](https://github.com/Notekunn/nest-boilerplate/compare/v1.17.0...v1.17.1) (2026-04-07)
+
+
+### Bug Fixes
+
+* add paths to e2e trigger condition ([#306](https://github.com/Notekunn/nest-boilerplate/issues/306)) ([0c83f26](https://github.com/Notekunn/nest-boilerplate/commit/0c83f263bc9fb9a81bc3ce9a33206417a5df02de))
+
 # [1.17.0](https://github.com/Notekunn/nest-boilerplate/compare/v1.16.1...v1.17.0) (2026-04-07)
 
 
