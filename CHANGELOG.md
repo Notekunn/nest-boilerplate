@@ -1,5 +1,12 @@
 # Nest boilerplate changelog
 
+# [1.17.0](https://github.com/Notekunn/nest-boilerplate/compare/v1.16.1...v1.17.0) (2026-04-07)
+
+
+### Features
+
+* update action version ([#305](https://github.com/Notekunn/nest-boilerplate/issues/305)) ([4a4255f](https://github.com/Notekunn/nest-boilerplate/commit/4a4255f9a152d2727fe85c6ed929d5622d8a831f))
+
 ## [1.16.1](https://github.com/Notekunn/nest-boilerplate/compare/v1.16.0...v1.16.1) (2026-04-07)
 
 
