@@ -8,6 +8,7 @@ module.exports = {
   transform: {
     '^.+\\.(t|j)s$': 'ts-jest',
   },
+  transformIgnorePatterns: ['node_modules/(?!.*change-case)'],
   coverageDirectory: '../coverage',
   rootDir: '.',
   testRegex: '.e2e-spec.ts$',

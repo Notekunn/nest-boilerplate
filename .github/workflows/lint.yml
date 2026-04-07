@@ -3,8 +3,8 @@ name: 🔍 Lint
 on:
   push:
     branches:
-      - '**'
-      - '!main'
+      - "**"
+      - "!main"
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -19,13 +19,13 @@ jobs:
     name: Run test
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
         with:
           fetch-depth: 0
           token: ${{ github.token }}
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v6
         with:
-          node-version: '22'
+          node-version: "24"
       - name: Install package
         run: corepack enable && pnpm install
       - name: Check lint

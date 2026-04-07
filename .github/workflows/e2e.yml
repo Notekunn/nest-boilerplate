@@ -44,13 +44,13 @@ jobs:
           --health-timeout 5s
           --health-retries 5
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v6
         with:
           fetch-depth: 0
           token: ${{ github.token }}
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v6
         with:
-          node-version: "22"
+          node-version: "24"
       - name: Install package
         run: corepack enable && pnpm install
       - name: Run migrations and seed
