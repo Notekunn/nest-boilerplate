@@ -1,5 +1,12 @@
 # Nest boilerplate changelog
 
+## [1.18.2](https://github.com/Notekunn/nest-boilerplate/compare/v1.18.1...v1.18.2) (2026-04-08)
+
+
+### Bug Fixes
+
+* **deps:** bump @fastify/static from 9.0.0 to 9.1.0 ([#309](https://github.com/Notekunn/nest-boilerplate/issues/309)) ([ce66cd8](https://github.com/Notekunn/nest-boilerplate/commit/ce66cd8971e7506c6dc7dc39eae6382070fb46fe))
+
 ## [1.18.1](https://github.com/Notekunn/nest-boilerplate/compare/v1.18.0...v1.18.1) (2026-04-08)
 
 
