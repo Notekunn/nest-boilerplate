@@ -1,5 +1,12 @@
 # Nest boilerplate changelog
 
+## [1.18.3](https://github.com/Notekunn/nest-boilerplate/compare/v1.18.2...v1.18.3) (2026-04-10)
+
+
+### Bug Fixes
+
+* **deps-dev:** bump @eslint/compat from 2.0.4 to 2.0.5 ([#311](https://github.com/Notekunn/nest-boilerplate/issues/311)) ([371ad0c](https://github.com/Notekunn/nest-boilerplate/commit/371ad0c4226440e1850f9ee2e6a232a272f958a5))
+
 ## [1.18.2](https://github.com/Notekunn/nest-boilerplate/compare/v1.18.1...v1.18.2) (2026-04-08)
 
 
