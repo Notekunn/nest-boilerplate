@@ -1,5 +1,12 @@
 # Nest boilerplate changelog
 
+## [1.18.4](https://github.com/Notekunn/nest-boilerplate/compare/v1.18.3...v1.18.4) (2026-04-10)
+
+
+### Bug Fixes
+
+* **deps-dev:** bump @typescript-eslint/parser from 8.58.0 to 8.58.1 ([#312](https://github.com/Notekunn/nest-boilerplate/issues/312)) ([a7a8c3b](https://github.com/Notekunn/nest-boilerplate/commit/a7a8c3ba57fb2177ec7debe06bf0d79fc05ff0a9))
+
 ## [1.18.3](https://github.com/Notekunn/nest-boilerplate/compare/v1.18.2...v1.18.3) (2026-04-10)
 
 
