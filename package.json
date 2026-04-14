@@ -48,7 +48,7 @@
     "@nestjs/cqrs": "^11.0.3",
     "@nestjs/jwt": "^11.0.2",
     "@nestjs/passport": "^11.0.5",
-    "@nestjs/platform-fastify": "^11.1.18",
+    "@nestjs/platform-fastify": "^11.1.19",
     "@nestjs/swagger": "^11.2.7",
     "@nestjs/typeorm": "^11.0.1",
     "bcryptjs": "^3.0.3",
