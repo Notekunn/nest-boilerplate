@@ -1,5 +1,12 @@
 # Nest boilerplate changelog
 
+## [1.18.5](https://github.com/Notekunn/nest-boilerplate/compare/v1.18.4...v1.18.5) (2026-04-14)
+
+
+### Bug Fixes
+
+* **deps:** bump @nestjs/swagger from 11.2.6 to 11.2.7 ([#314](https://github.com/Notekunn/nest-boilerplate/issues/314)) ([5f7d31b](https://github.com/Notekunn/nest-boilerplate/commit/5f7d31b939f4e0acff73bf31d74c4de245975e9b))
+
 ## [1.18.4](https://github.com/Notekunn/nest-boilerplate/compare/v1.18.3...v1.18.4) (2026-04-10)
 
 
