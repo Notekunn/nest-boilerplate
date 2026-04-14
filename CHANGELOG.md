@@ -1,5 +1,12 @@
 # Nest boilerplate changelog
 
+## [1.18.6](https://github.com/Notekunn/nest-boilerplate/compare/v1.18.5...v1.18.6) (2026-04-14)
+
+
+### Bug Fixes
+
+* **deps:** bump @nestjs/config from 4.0.3 to 4.0.4 ([#313](https://github.com/Notekunn/nest-boilerplate/issues/313)) ([57f23b5](https://github.com/Notekunn/nest-boilerplate/commit/57f23b52e6720906c18a43b22f7dfcfb90652985))
+
 ## [1.18.5](https://github.com/Notekunn/nest-boilerplate/compare/v1.18.4...v1.18.5) (2026-04-14)
 
 
