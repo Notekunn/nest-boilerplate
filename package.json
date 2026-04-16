@@ -74,7 +74,7 @@
     "@eslint/eslintrc": "^3.3.5",
     "@eslint/js": "^10.0.1",
     "@nestjs/cli": "^11.0.19",
-    "@nestjs/testing": "^11.1.18",
+    "@nestjs/testing": "^11.1.19",
     "@notekunn/schematics": "^1.10.4",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/commit-analyzer": "^13.0.1",
