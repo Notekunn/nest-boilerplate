@@ -1,5 +1,12 @@
 # Nest boilerplate changelog
 
+## [1.18.9](https://github.com/Notekunn/nest-boilerplate/compare/v1.18.8...v1.18.9) (2026-04-16)
+
+
+### Bug Fixes
+
+* **deps:** bump @nestjs/common from 11.1.18 to 11.1.19 ([#322](https://github.com/Notekunn/nest-boilerplate/issues/322)) ([a0555ef](https://github.com/Notekunn/nest-boilerplate/commit/a0555ef772990041517cac567a853c0f976b5b22))
+
 ## [1.18.8](https://github.com/Notekunn/nest-boilerplate/compare/v1.18.7...v1.18.8) (2026-04-16)
 
 
