@@ -1,5 +1,12 @@
 # Nest boilerplate changelog
 
+## [1.18.8](https://github.com/Notekunn/nest-boilerplate/compare/v1.18.7...v1.18.8) (2026-04-16)
+
+
+### Bug Fixes
+
+* **deps:** bump @nestjs/platform-fastify from 11.1.18 to 11.1.19 ([#321](https://github.com/Notekunn/nest-boilerplate/issues/321)) ([381734c](https://github.com/Notekunn/nest-boilerplate/commit/381734cc79fd25e78da7c87a2a47bd05dc08ef04))
+
 ## [1.18.7](https://github.com/Notekunn/nest-boilerplate/compare/v1.18.6...v1.18.7) (2026-04-14)
 
 
