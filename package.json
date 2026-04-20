@@ -38,7 +38,7 @@
     "seed:admin": "ts-node -r tsconfig-paths/register src/databases/seeds/seed-runner.ts --only=admin"
   },
   "dependencies": {
-    "@casl/ability": "^6.8.0",
+    "@casl/ability": "^6.8.1",
     "@fastify/helmet": "^13.0.2",
     "@fastify/static": "^9.1.1",
     "@nestjs-architects/typed-cqrs": "^2.1.0",
