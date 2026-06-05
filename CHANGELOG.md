@@ -1,5 +1,12 @@
 # Nest boilerplate changelog
 
+## [1.18.11](https://github.com/Notekunn/nest-boilerplate/compare/v1.18.10...v1.18.11) (2026-06-05)
+
+
+### Bug Fixes
+
+* **deps:** bump brace-expansion from 5.0.5 to 5.0.6 ([#342](https://github.com/Notekunn/nest-boilerplate/issues/342)) ([39bdcc5](https://github.com/Notekunn/nest-boilerplate/commit/39bdcc54a52ff8704e33c5359dd6b80aa7ee9128))
+
 ## [1.18.10](https://github.com/Notekunn/nest-boilerplate/compare/v1.18.9...v1.18.10) (2026-04-20)
 
 
