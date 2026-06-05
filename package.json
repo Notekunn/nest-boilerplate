@@ -92,7 +92,7 @@
     "@typescript-eslint/parser": "^8.58.2",
     "dotenv": "^17.4.2",
     "env-cmd": "^11.0.0",
-    "eslint": "^10.2.1",
+    "eslint": "^10.3.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-prettier": "^5.5.5",
